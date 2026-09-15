@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    input, button { font-family: 'Montserrat', sans-serif; }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="club" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="page-hero" style="background:linear-gradient(120deg,#004399 0%,#002a63 100%);padding:70px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:14px">PROGRAMA DE FIDELIDADE</div>
+    <h1 style="font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;color:#ffffff;margin:0;max-width:760px">Club Vip NPL</h1>
+  </div>
+</section>
+
+<section data-screen-label="app" data-fx="glow" style="position:relative;background:linear-gradient(165deg,#002a5e 0%,#004399 58%,#002a5e 100%);padding:80px 20px 110px;overflow-x:clip">
+  <div data-fx="ghost" data-fx-factor="0.12" aria-hidden="true" style="position:absolute;left:-7%;top:14%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(160px,30vw,440px);line-height:1;letter-spacing:-0.03em;color:#ffffff;opacity:0.06;white-space:nowrap;pointer-events:none;user-select:none">CLUB VIP</div>
+  <div style="position:relative;z-index:2;max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:start">
+    <div>
+      <h2 style="font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-0.01em;color:#ffffff;margin:0 0 20px">Cada litro vira ponto.<br>Cada ponto vira prêmio.</h2>
+      <p style="font-size:16.5px;line-height:1.7;color:#c3d7f2;margin:0 0 34px;max-width:480px">O Club Vip NPL é o programa de fidelidade do posto. Baixe o app, cadastre-se e acompanhe seu saldo a cada abastecimento.</p>
+
+      <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);padding:30px 28px;backdrop-filter:blur(6px)">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;color:#9fb8dc;margin-bottom:18px">SIMULADOR DE PONTOS</div>
+        <div style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">
+          <button onclick="{{ setComum }}" style="flex:1;min-width:130px;padding:13px;background:{{ comumBg }};color:{{ comumColor }};border:1px solid rgba(255,255,255,0.22);font-size:14px;font-weight:600;cursor:pointer;border-radius:30px">Gasolina comum</button>
+          <button onclick="{{ setAditivada }}" style="flex:1;min-width:130px;padding:13px;background:{{ aditivadaBg }};color:{{ aditivadaColor }};border:1px solid rgba(255,255,255,0.22);font-size:14px;font-weight:600;cursor:pointer;border-radius:30px">Gasolina aditivada</button>
+        </div>
+        <label style="display:block;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc;margin-bottom:12px">LITROS POR ABASTECIMENTO</label>
+        <input type="range" min="5" max="80" step="1" value="{{ liters }}" oninput="{{ onLitersChange }}" style="width:100%;accent-color:#00A972;margin-bottom:24px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px;border-top:1px solid rgba(255,255,255,0.16);padding-top:22px">
+          <div>
+            <div style="font-size:34px;font-weight:800;color:#00E39A;line-height:1">{{ liters }}<span style="font-size:15px;color:#9fb8dc"> L</span></div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#9fb8dc;margin-top:6px">ABASTECIDOS</div>
+          </div>
+          <div>
+            <div style="font-size:34px;font-weight:800;color:#ffffff;line-height:1">{{ pointsPerFill }}</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#9fb8dc;margin-top:6px">PONTOS NESTE ABASTECIMENTO</div>
+          </div>
+          <div>
+            <div style="font-size:34px;font-weight:800;color:#ffffff;line-height:1">{{ pointsPerMonth }}</div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#9fb8dc;margin-top:6px">EM 4 ABASTECIMENTOS</div>
+          </div>
+        </div>
+        <sc-if value="{{ hasNextTarget }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:24px;border-top:1px solid rgba(255,255,255,0.16);padding-top:20px">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:12px">
+              <span style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc">PRÓXIMO PRÊMIO · {{ nextTargetName }}</span>
+              <span style="font-size:13px;font-weight:800;color:#00E39A;white-space:nowrap">{{ nextTargetMissing }}</span>
+            </div>
+            <div style="height:12px;background:rgba(255,255,255,0.14);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);overflow:hidden">
+              <div style="height:12px;width:{{ nextTargetPct }};background:linear-gradient(90deg,#00A972,#00E39A);transition:width .45s cubic-bezier(.2,.7,.3,1)"></div>
+            </div>
+          </div>
+        </sc-if>
+        <p style="font-size:13px;color:#9fb8dc;margin:20px 0 0;line-height:1.6">Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro. Simulação ilustrativa — o saldo oficial é o do aplicativo.</p>
+      </div>
+
+    </div>
+    <div data-fx="reveal-fade" style="position:relative;width:min(540px,100%);aspect-ratio:540/620;margin:0 auto -80px;container-type:inline-size;perspective:1400px;z-index:3">
+      <div style="position:absolute;left:7%;top:4%;width:46cqw;padding:1.1cqw;background:#0c1526;border-radius:5cqw;transform:rotate(-9deg);box-shadow:0 14px 32px rgba(0,10,40,0.4);z-index:1">
+        <image-slot id="club-screenshot-1" src="uploads/WhatsApp Image 2026-08-19 at 17.01.37.jpeg" fit="cover" shape="rounded" radius="16" placeholder="Tela inicial do app" style="width:100%;aspect-ratio:739/1600;display:block"></image-slot>
+      </div>
+      <div style="position:absolute;right:7%;top:4%;width:46cqw;padding:1.1cqw;background:#0c1526;border-radius:5cqw;transform:rotate(9deg);box-shadow:0 14px 32px rgba(0,10,40,0.4);z-index:1">
+        <image-slot id="club-screenshot-3" src="uploads/WhatsApp Image 2026-08-19 at 17.01.37 (2).jpeg" fit="cover" shape="rounded" radius="16" placeholder="Detalhes de um prêmio" style="width:100%;aspect-ratio:739/1600;display:block"></image-slot>
+      </div>
+      <div style="position:absolute;left:50%;top:0;width:46cqw;padding:1.1cqw;background:#0c1526;border-radius:5cqw;transform:translateX(-50%);box-shadow:0 22px 46px rgba(0,10,40,0.5);z-index:2">
+        <image-slot id="club-screenshot-2" src="uploads/WhatsApp Image 2026-08-19 at 17.01.37 (1).jpeg" fit="cover" shape="rounded" radius="16" placeholder="Prêmios e descontos" style="width:100%;aspect-ratio:739/1600;display:block"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="premios" style="background:#001d44;padding:70px 20px 60px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px">
+      <h3 style="font-size:24px;font-weight:800;color:#ffffff;margin:0">Prêmios que você alcança</h3>
+      <span style="font-size:14px;font-weight:700;color:#00E39A;white-space:nowrap">{{ unlockedCount }}</span>
+    </div>
+    <p style="font-size:15px;color:#b9cfec;margin:0 0 26px;line-height:1.6;max-width:680px">Com <strong>{{ pointsPerMonth }} pontos</strong> em 4 abastecimentos, conforme o simulador acima. Lanches e bebidas são da Budega Paulista, nossa conveniência parceira.</p>
+
+    <sc-if value="{{ hasUnlocked }}" hint-placeholder-val="{{ true }}">
+      <div data-fx="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px">
+        <sc-for list="{{ unlocked }}" as="rw" hint-placeholder-count="8">
+          <div style="background:{{ rw.cardBg }};border:{{ rw.cardBorder }};box-shadow:{{ rw.cardGlow }};transform:{{ rw.cardScale }};clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s ease, transform .3s ease">
+            <div style="height:100px;background:#ffffff"><image-slot id="{{ rw.slot }}" src="{{ rw.img }}" fit="contain" shape="rect" placeholder="{{ rw.ph }}"></image-slot></div>
+            <div style="padding:12px 14px 14px;display:flex;flex-direction:column;gap:5px;flex:1">
+              <span style="font-size:13px;font-weight:700;color:#ffffff;line-height:1.3">{{ rw.n }}</span>
+              <span style="font-size:11.5px;color:#9fb8dc">{{ rw.c }}</span>
+              <span style="font-size:12px;font-weight:800;color:#00E39A;margin-top:auto">{{ rw.pts }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noneUnlocked }}" hint-placeholder-val="{{ false }}">
+      <p style="font-size:15px;color:#b9cfec;margin:0;line-height:1.6">Aumente os litros no simulador para ver os primeiros prêmios disponíveis.</p>
+    </sc-if>
+
+    <sc-if value="{{ hasNext }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:28px;border-top:1px solid rgba(255,255,255,0.16);padding-top:20px">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc;margin-bottom:14px">PRÓXIMOS PRÊMIOS</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 40px">
+          <sc-for list="{{ nextUp }}" as="rw" hint-placeholder-count="3">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:14px">
+              <span style="font-size:14px;color:#ffffff;font-weight:600;line-height:1.3">{{ rw.n }}</span>
+              <span style="font-size:12.5px;font-weight:700;color:#b9cfec;white-space:nowrap">{{ rw.missing }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<section data-screen-label="detalhes" style="background:#002a5e;padding:70px 20px 80px">
+  <div style="max-width:820px;margin:0 auto">
+    <div style="position:relative;margin-bottom:50px">
+      <div aria-hidden="true" style="position:absolute;left:6%;right:6%;top:52%;height:2px;background:linear-gradient(90deg,rgba(0,227,154,0),rgba(0,227,154,0.55),rgba(0,227,154,0));transform:skewY(-1.6deg)"></div>
+      <div data-fx="reveal" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px">
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);padding:24px 22px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)">
+          <div style="height:4px;width:52px;background:#00E39A;transform:skewX(-13deg);margin-bottom:18px"></div>
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc;margin-bottom:8px">01</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:21px;font-weight:800;color:#ffffff">Abastece</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);padding:24px 22px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)">
+          <div style="height:4px;width:52px;background:#00E39A;transform:skewX(-13deg);margin-bottom:18px"></div>
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc;margin-bottom:8px">02</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:21px;font-weight:800;color:#ffffff">Acumula pontos</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.16);padding:24px 22px;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)">
+          <div style="height:4px;width:52px;background:#00E39A;transform:skewX(-13deg);margin-bottom:18px"></div>
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#9fb8dc;margin-bottom:8px">03</div>
+          <div style="font-family:'Montserrat',sans-serif;font-size:21px;font-weight:800;color:#ffffff">Resgata prêmio</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px;margin-bottom:34px">
+      <div style="display:flex;gap:16px;border-top:1px solid rgba(255,255,255,0.16);padding-top:18px">
+        <span style="font-size:12px;font-weight:700;color:#00E39A;flex-shrink:0;margin-top:3px">01</span>
+        <div><h3 style="margin:0 0 5px;font-size:16.5px;font-weight:700;color:#ffffff">Pontos em cada abastecimento</h3><p style="margin:0;font-size:14.5px;color:#b9cfec;line-height:1.65">Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;border-top:1px solid rgba(255,255,255,0.16);padding-top:18px">
+        <span style="font-size:12px;font-weight:700;color:#00E39A;flex-shrink:0;margin-top:3px">02</span>
+        <div><h3 style="margin:0 0 5px;font-size:16.5px;font-weight:700;color:#ffffff">Resgate de prêmios</h3><p style="margin:0;font-size:14.5px;color:#b9cfec;line-height:1.65">Troque seus pontos por prêmios e descontos ao atingir a pontuação necessária.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;border-top:1px solid rgba(255,255,255,0.16);padding-top:18px">
+        <span style="font-size:12px;font-weight:700;color:#00E39A;flex-shrink:0;margin-top:3px">03</span>
+        <div><h3 style="margin:0 0 5px;font-size:16.5px;font-weight:700;color:#ffffff">Promoções programadas</h3><p style="margin:0;font-size:14.5px;color:#b9cfec;line-height:1.65">Sorteios, pontuação em dobro ou triplo, desconto por litro, desconto fixo e roleta de prêmios — liberados periodicamente pelo posto.</p></div>
+      </div>
+      <div style="display:flex;gap:16px;border-top:1px solid rgba(255,255,255,0.16);padding-top:18px">
+        <span style="font-size:12px;font-weight:700;color:#00E39A;flex-shrink:0;margin-top:3px">04</span>
+        <div><h3 style="margin:0 0 5px;font-size:16.5px;font-weight:700;color:#ffffff">Campanha de aniversário</h3><p style="margin:0;font-size:14.5px;color:#b9cfec;line-height:1.65">No dia do seu aniversário você ganha um desconto especial.</p></div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="https://apps.apple.com/br/app/club-vip-npl/id6749268854" target="_blank" rel="noopener" style="padding:15px 26px;background:#00A972;color:#ffffff;text-decoration:none;font-weight:700;font-size:14px;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)">Baixar na App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=br.com.clubpetro.v2.redeneopolisrn&hl=pt_BR" target="_blank" rel="noopener" style="padding:15px 26px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#ffffff;text-decoration:none;font-weight:700;font-size:14px;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)">Disponível no Google Play</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { liters: 30, fuel: 'comum', rewards: null };
+
+  componentDidMount() {
+    import('./rewards.js')
+      .then(m => this.setState({ rewards: m.REWARDS }))
+      .catch(err => console.error('Falha ao carregar os prêmios:', err));
+  }
+
+  renderVals() {
+    const perLiter = this.state.fuel === 'aditivada' ? 2 : 1;
+    const pointsPerFill = this.state.liters * perLiter;
+    const active = { bg: '#00A972', color: '#ffffff' };
+    const idle = { bg: '#ffffff', color: '#40506b' };
+    const comum = this.state.fuel === 'comum' ? active : idle;
+    const aditivada = this.state.fuel === 'aditivada' ? active : idle;
+    const balance = pointsPerFill * 4;
+    const rewards = this.state.rewards || [];
+    // O primeiro da lista é o prêmio mais caro já alcançado: ganha destaque aceso.
+    const unlocked = rewards.filter(r => r.p <= balance).sort((a, b) => b.p - a.p).map((r, i) => ({
+      n: r.n, c: r.c, slot: r.slot, img: r.img || '', pts: `${r.p} pontos`, ph: `Foto: ${r.n}`,
+      cardBg: i === 0 ? 'rgba(0,169,114,0.16)' : 'rgba(255,255,255,0.07)',
+      cardBorder: i === 0 ? '1px solid #00E39A' : '1px solid rgba(255,255,255,0.16)',
+      cardGlow: i === 0 ? '0 16px 36px rgba(0,169,114,0.38)' : '0 8px 20px rgba(0,15,40,0.28)',
+      cardScale: i === 0 ? 'scale(1.04)' : 'none'
+    }));
+    const nextTarget = rewards.filter(r => r.p > balance).sort((a, b) => a.p - b.p)[0] || null;
+    const nextUp = rewards.filter(r => r.p > balance).sort((a, b) => a.p - b.p).slice(0, 3).map(r => ({
+      n: r.n, missing: `faltam ${r.p - balance} pts`
+    }));
+
+    return {
+      liters: this.state.liters,
+      pointsPerFill,
+      pointsPerMonth: balance,
+      unlocked,
+      nextUp,
+      hasUnlocked: unlocked.length > 0,
+      noneUnlocked: rewards.length > 0 && unlocked.length === 0,
+      hasNext: nextUp.length > 0,
+      hasNextTarget: !!nextTarget,
+      nextTargetName: nextTarget ? nextTarget.n : '',
+      nextTargetMissing: nextTarget ? `faltam ${nextTarget.p - balance} pts` : '',
+      nextTargetPct: nextTarget ? `${Math.max(4, Math.min(100, Math.round((balance / nextTarget.p) * 100)))}%` : '0%',
+      unlockedCount: unlocked.length === 1 ? '1 prêmio disponível' : `${unlocked.length} prêmios disponíveis`,
+      comumBg: comum.bg,
+      comumColor: comum.color,
+      aditivadaBg: aditivada.bg,
+      aditivadaColor: aditivada.color,
+      setComum: () => this.setState({ fuel: 'comum' }),
+      setAditivada: () => this.setState({ fuel: 'aditivada' }),
+      onLitersChange: (e) => this.setState({ liters: Number(e.target.value) })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

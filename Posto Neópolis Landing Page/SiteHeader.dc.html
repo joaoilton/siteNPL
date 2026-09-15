@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</helmet>
+<header ref="{{ rootRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;background:{{ shellBg }};backdrop-filter:{{ shellBlur }};-webkit-backdrop-filter:{{ shellBlur }};box-shadow:{{ shellShadow }};font-family:'Montserrat',sans-serif;transform:{{ shellShift }};transition:background .3s ease, box-shadow .3s ease, transform .34s cubic-bezier(.2,.7,.3,1)">
+  <div style="background:#004399;display:flex;justify-content:center;align-items:center;gap:4px 24px;flex-wrap:wrap;padding:8px 20px;font-size:12.5px;line-height:1.5;font-weight:500;letter-spacing:0.04em;color:#d6e3f7;text-align:center">
+    <span style="white-space:nowrap">ALAMEDA DAS ACÁCIAS, 1038 — NEÓPOLIS, NATAL/RN</span>
+    <span style="white-space:nowrap">06H — 22H, TODOS OS DIAS</span>
+    <a href="tel:+5584991801090" style="color:#d6e3f7;text-decoration:none;white-space:nowrap">(84) 99180-1090</a>
+    <a href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener" style="color:#7dd8b4;text-decoration:none;font-weight:600;white-space:nowrap">INSTAGRAM</a>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+    <a href="Inicio.dc.html" style="display:block;line-height:0"><img src="uploads/1.png" alt="Posto Neópolis NPL" style="height:34px;width:auto;display:block"></a>
+    <nav style="display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;align-items:center">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="9">
+        <a href="{{ item.href }}" style="padding:8px 13px;font-size:13.5px;line-height:1.35;white-space:nowrap;text-decoration:none;color:{{ item.color }};font-weight:{{ item.weight }};clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:background .18s ease, color .18s ease" style-hover="background:#00A972;color:#ffffff">{{ item.label }}</a>
+      </sc-for>
+      <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:10px 22px;font-size:13.5px;font-weight:700;color:#ffffff;background:#00A972;text-decoration:none;margin-left:8px;white-space:nowrap;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)">Falar no WhatsApp</a>
+    </nav>
+  </div>
+  <div style="height:3px;background:#e6ecf6"><div style="height:3px;background:linear-gradient(90deg,#004399,#00A972);width:{{ scrollProgress }}"></div></div>
+</header>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: {&quot;width&quot;: 1240, &quot;height&quot;: 140},
+  &quot;current&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;inicio&quot;, &quot;options&quot;: [&quot;inicio&quot;, &quot;historia&quot;, &quot;estrutura&quot;, &quot;produtos&quot;, &quot;club&quot;, &quot;pagamento&quot;, &quot;localizacao&quot;, &quot;duvidas&quot;, &quot;parcerias&quot;], &quot;tsType&quot;: &quot;string&quot;}
+}">
+class Component extends DCLogic {
+  state = { scrollPct: 0, scrolled: false, hidden: false };
+  lastY = 0;
+
+  pages = [
+    { slug: 'inicio', label: 'Início', href: 'Inicio.dc.html' },
+    { slug: 'historia', label: 'Nossa História', href: 'Nossa-Historia.dc.html' },
+    { slug: 'estrutura', label: 'Estrutura', href: 'Estrutura.dc.html' },
+    { slug: 'produtos', label: 'Produtos', href: 'Produtos.dc.html' },
+    { slug: 'club', label: 'Club Vip NPL', href: 'Club-Vip-NPL.dc.html' },
+    { slug: 'pagamento', label: 'Pagamento', href: 'Pagamento.dc.html' },
+    { slug: 'localizacao', label: 'Localização', href: 'Localizacao.dc.html' },
+    { slug: 'duvidas', label: 'Dúvidas', href: 'Duvidas.dc.html' },
+    { slug: 'parcerias', label: 'Parcerias', href: 'Parcerias.dc.html' }
+  ];
+
+  rootRef = React.createRef();
+
+  // O cabeçalho é fixo; o espaço equivalente é reservado no topo da página.
+  syncOffset = () => {
+    const el = this.rootRef.current;
+    if (!el) return;
+    const h = el.getBoundingClientRect().height;
+    if (h) document.body.style.paddingTop = `${h}px`;
+  };
+
+  componentDidMount() {
+    this.syncOffset();
+    if (window.ResizeObserver && this.rootRef.current) {
+      this.ro = new ResizeObserver(this.syncOffset);
+      this.ro.observe(this.rootRef.current);
+    }
+    window.addEventListener('resize', this.syncOffset);
+    this.onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? Math.min(100, Math.round((h.scrollTop / max) * 100)) : 0;
+      const y = h.scrollTop;
+      const scrolled = y > 12;
+      // Recolhe ao descer, reaparece ao subir. Tolerancia de 6px evita tremor.
+      const shellH = this.rootRef.current ? this.rootRef.current.offsetHeight : 140;
+      let hidden = this.state.hidden;
+      const d = y - this.lastY;
+      if (y <= shellH) hidden = false;
+      else if (d > 6) hidden = true;
+      else if (d < -6) hidden = false;
+      if (Math.abs(d) > 6 || y <= shellH) this.lastY = y;
+      if (pct !== this.state.scrollPct || scrolled !== this.state.scrolled || hidden !== this.state.hidden) {
+        this.setState({ scrollPct: pct, scrolled, hidden });
+      }
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.syncOffset);
+    if (this.ro) this.ro.disconnect();
+    document.body.style.paddingTop = '';
+  }
+
+  renderVals() {
+    const current = this.props.current ?? '';
+    return {
+      navItems: this.pages.map(p => ({
+        label: p.label,
+        href: p.href,
+        color: p.slug === current ? '#004399' : '#2c3e57',
+        weight: p.slug === current ? 700 : 500
+      })),
+      scrollProgress: `${this.state.scrollPct}%`,
+      shellBg: this.state.scrolled ? 'rgba(255,255,255,0.82)' : '#ffffff',
+      shellBlur: this.state.scrolled ? 'saturate(180%) blur(14px)' : 'none',
+      shellShadow: this.state.scrolled ? '0 6px 26px rgba(0,45,110,0.16)' : '0 2px 14px rgba(0,45,110,0.08)',
+      shellShift: this.state.hidden ? 'translateY(-100%)' : 'translateY(0)',
+      rootRef: this.rootRef
+    };
+  }
+}
+
+</script>
+</body>
+</html>

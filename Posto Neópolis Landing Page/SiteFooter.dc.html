@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="height:26px;background:#ffffff;overflow:hidden">
+  <div style="height:26px;background:#00A972;transform:skewY(-1.2deg) translateY(9px)"></div>
+</div>
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" style="position:fixed;right:18px;bottom:18px;z-index:80;display:flex;align-items:center;gap:9px;padding:14px 20px;background:#00A972;color:#ffffff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 10px 26px rgba(0,45,110,0.3);clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%);transition:transform .25s ease, box-shadow .25s ease" style-hover="transform:translateY(-2px);box-shadow:0 14px 32px rgba(0,169,114,0.55)">
+  <svg viewBox="0 0 24 24" width="19" height="19" fill="#ffffff" aria-hidden="true" style="flex-shrink:0;display:block"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.33a8.2 8.2 0 01-1.26-4.24c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.24-8.19 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.74 2.78 4.22 3.79 2.06.84 2.48.67 2.93.63.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.22-.16-.47-.28z"></path></svg><span style="white-space:nowrap">{{ waLabel }}</span>
+</a>
+<footer style="background:#002a63;padding:60px 20px 30px;font-family:'Inter',sans-serif">
+  <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-bottom:44px">
+    <div>
+      <img src="uploads/3.png" alt="Posto Neópolis NPL" style="height:52px;width:auto;display:block;margin-bottom:14px">
+      <div style="font-weight:700;font-size:14px;letter-spacing:0.06em;color:#ffffff">POSTO NEÓPOLIS</div>
+      <p style="font-size:14px;color:#a9c0e0;margin:10px 0 0;line-height:1.6">Unidade única no bairro Neópolis, Natal/RN.</p>
+    </div>
+    <div>
+      <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">NAVEGAÇÃO</h4>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="Nossa-Historia.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Nossa História</a>
+        <a href="Estrutura.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Estrutura</a>
+        <a href="Produtos.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Produtos</a>
+        <a href="Club-Vip-NPL.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Club Vip NPL</a>
+        <a href="Pagamento.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Formas de pagamento</a>
+        <a href="Duvidas.dc.html" style="color:#d6e3f7;font-size:14px;text-decoration:none">Dúvidas frequentes</a>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">CONTATO</h4>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="color:#d6e3f7;font-size:14px">Alameda das Acácias, 1038</span>
+        <span style="color:#d6e3f7;font-size:14px">Neópolis, Natal/RN</span>
+        <a href="tel:+5584991801090" style="color:#d6e3f7;font-size:14px;text-decoration:none">(84) 99180-1090</a>
+        <span style="color:#d6e3f7;font-size:14px">Todos os dias, 6h às 22h</span>
+      </div>
+    </div>
+    <div>
+      <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">REDES</h4>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener" style="color:#7dd8b4;font-size:14px;text-decoration:none">@nplpostoneopolis</a>
+        <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="color:#7dd8b4;font-size:14px;text-decoration:none">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;border-top:1px solid #ffffff26;padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+    <span style="font-size:11.5px;font-weight:500;letter-spacing:0.06em;color:#a9c0e0">© {{ year }} POSTO NEÓPOLIS</span>
+    <span style="font-size:11.5px;font-weight:500;letter-spacing:0.06em;color:#a9c0e0">NEÓPOLIS · NATAL/RN</span>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1240, &quot;height&quot;: 420}}">
+class Component extends DCLogic {
+  // Mensagem do WhatsApp muda conforme a página em que o visitante está.
+  renderVals() {
+    const page = decodeURIComponent((location.pathname.split('/').pop() || '')).toLowerCase();
+    let msg = 'Olá! Gostaria de falar com o Posto Neópolis.';
+    let label = 'WhatsApp';
+    if (page.startsWith('produtos')) {
+      msg = 'Olá! Gostaria de consultar a disponibilidade de...';
+      label = 'Consultar produto';
+    } else if (page.startsWith('parcerias')) {
+      msg = 'Olá! Tenho interesse em parceria comercial.';
+      label = 'Falar sobre parceria';
+    }
+    return {
+      year: new Date().getFullYear(),
+      waLabel: label,
+      waHref: `https://wa.me/5584991801090?text=${encodeURIComponent(msg)}`
+    };
+  }
+}
+
+</script>
+</body>
+</html>

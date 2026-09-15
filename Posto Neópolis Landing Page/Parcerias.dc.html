@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    input, select, textarea, button { font-family: 'Montserrat', sans-serif; }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="parcerias" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="page-hero" style="background:linear-gradient(120deg,#004399 0%,#002a63 100%);padding:70px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:14px">VAMOS CRESCER JUNTOS</div>
+    <h1 style="font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;color:#ffffff;margin:0;max-width:760px">Parcerias com o Posto Neópolis</h1>
+  </div>
+</section>
+
+<section data-screen-label="parcerias" style="background:#ffffff;padding:80px 20px">
+  <div data-fx="reveal" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:start">
+    <div>
+      <p style="font-size:16.5px;line-height:1.75;color:#40506b;margin:0 0 30px">Estamos abertos a parcerias com empresas que buscam contrato de fornecimento de combustível para frotas, fornecedores de produtos e serviços como óleo, filtros, aditivos e graxas, e negócios ou eventos locais do bairro Neópolis interessados em patrocínio ou ações conjuntas.</p>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="border-top:1px solid #e2e9f4;padding-top:14px;font-size:15px;color:#5b6b83">Fornecimento de combustível para frotas (B2B)</div>
+        <div style="border-top:1px solid #e2e9f4;padding-top:14px;font-size:15px;color:#5b6b83">Fornecedores de óleo, filtros, aditivos e graxas</div>
+        <div style="border-top:1px solid #e2e9f4;padding-top:14px;font-size:15px;color:#5b6b83">Patrocínio e ações locais no bairro Neópolis</div>
+      </div>
+      <image-slot id="parcerias-foto" src="uploads/WhatsApp Image 2025-09-19 at 19.24.26 (2).jpeg" fit="cover" shape="rounded" radius="14" placeholder="Posto Neópolis" style="width:100%;height:240px;display:block;margin-top:34px"></image-slot>
+    </div>
+    <div>
+      <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+        <div style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%);padding:38px">
+          <h3 style="font-size:24px;font-weight:700;color:#00A972;margin:0 0 12px">{{ confirmTitle }}</h3>
+          <p style="color:#40506b;font-size:15px;line-height:1.7;margin:0 0 20px">{{ confirmText }}</p>
+          <sc-if value="{{ needsMailFallback }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px">
+              <a href="{{ mailtoHref }}" style="padding:13px 24px;background:#004399;color:#ffffff;font-weight:700;text-decoration:none;font-size:14px;border-radius:30px">Abrir e-mail novamente</a>
+              <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:13px 24px;background:#00A972;color:#ffffff;font-weight:700;text-decoration:none;font-size:14px;border-radius:30px">Chamar no WhatsApp</a>
+            </div>
+          </sc-if>
+          <button onclick="{{ resetForm }}" style="background:#ffffff;border:1px solid #cfdbec;color:#004399;padding:13px 24px;border-radius:30px;font-weight:700;cursor:pointer;font-size:14px">Enviar outra proposta</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+        <!-- O envio abre o app de e-mail do visitante (mailto) com os dados preenchidos. -->
+        <form onsubmit="{{ handleSubmit }}" style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,0 100%);padding:34px;display:flex;flex-direction:column;gap:20px">
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">NOME*
+            <input type="text" value="{{ formData.name }}" onchange="{{ onNameChange }}" required style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">EMPRESA (OPCIONAL)
+            <input type="text" value="{{ formData.company }}" onchange="{{ onCompanyChange }}" style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+          </label>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px">
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">E-MAIL*
+              <input type="email" value="{{ formData.email }}" onchange="{{ onEmailChange }}" required style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">TELEFONE/WHATSAPP*
+              <input type="tel" value="{{ formData.phone }}" onchange="{{ onPhoneChange }}" required style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+            </label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">TIPO DE PARCERIA*
+            <select value="{{ formData.type }}" onchange="{{ onTypeChange }}" required style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+              <option value="">Selecione...</option>
+              <option value="Fornecimento de combustível (B2B)">Fornecimento de combustível (B2B)</option>
+              <option value="Fornecedor de produtos/serviços">Fornecedor de produtos/serviços</option>
+              <option value="Patrocínio/ação local">Patrocínio/ação local</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">MENSAGEM*
+            <textarea value="{{ formData.message }}" onchange="{{ onMessageChange }}" required rows="4" style="padding:13px;background:#ffffff;border:1px solid #dbe4f1;color:#10243d;font-size:15px;resize:vertical;border-radius:8px"></textarea>
+          </label>
+          <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+            <p style="color:#c0392b;font-size:14px;margin:0">{{ formError }}</p>
+          </sc-if>
+          <button type="submit" disabled="{{ sending }}" style="background:#00A972;color:#ffffff;border:none;padding:16px 30px;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%);font-weight:700;cursor:pointer;font-size:15px;opacity:{{ submitOpacity }}">{{ submitLabel }}</button>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    formData: { name: '', company: '', email: '', phone: '', type: '', message: '' },
+    formSubmitted: false,
+    formError: '',
+    mailtoHref: '',
+    sending: false,
+    sentByServer: false
+  };
+
+  updateField(field, value) { this.setState(s => ({ formData: { ...s.formData, [field]: value } })); }
+
+  async handleSubmit(e) {
+    e.preventDefault();
+    const d = this.state.formData;
+    if (!d.name || !d.email || !d.phone || !d.type || !d.message) {
+      this.setState({ formError: 'Preencha todos os campos obrigatórios.' });
+      return;
+    }
+    this.setState({ sending: true, formError: '' });
+    // Envio pelo FormSubmit: a mensagem sai do site direto para o e-mail do posto.
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/joaopneo@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Proposta de parceria — ' + (d.company || d.name),
+          _template: 'table',
+          _captcha: 'false',
+          Nome: d.name,
+          Empresa: d.company || '—',
+          'E-mail': d.email,
+          'Telefone/WhatsApp': d.phone,
+          'Tipo de parceria': d.type,
+          Mensagem: d.message,
+          Origem: 'Site Posto Neópolis — página Parcerias'
+        })
+      });
+      // O FormSubmit responde 200 mesmo quando o destinatario ainda nao foi
+      // ativado; a entrega real vem no corpo, em success.
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'HTTP ' + res.status);
+      this.setState({ formSubmitted: true, sending: false, formError: '', sentByServer: true });
+      return;
+    } catch (err) {
+      console.warn('Envio automático falhou, usando e-mail do visitante:', err);
+      this.setState({ sending: false, sentByServer: false });
+    }
+    // Abre o app de e-mail do visitante com a proposta ja preenchida.
+    const body = [
+      'Nome: ' + d.name,
+      'Empresa: ' + (d.company || '—'),
+      'E-mail: ' + d.email,
+      'Telefone/WhatsApp: ' + d.phone,
+      'Tipo de parceria: ' + d.type,
+      '',
+      'Mensagem:',
+      d.message,
+      '',
+      '— Enviado pelo site do Posto Neópolis'
+    ].join('\n');
+    const href = 'mailto:joaopneo@gmail.com'
+      + '?subject=' + encodeURIComponent('Proposta de parceria — ' + (d.company || d.name))
+      + '&body=' + encodeURIComponent(body);
+    window.location.href = href;
+    this.setState({ formSubmitted: true, formError: '', mailtoHref: href });
+  }
+
+  renderVals() {
+    return {
+      formData: this.state.formData,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      formError: this.state.formError,
+      mailtoHref: this.state.mailtoHref || 'mailto:joaopneo@gmail.com',
+      sending: this.state.sending,
+      sentByServer: this.state.sentByServer,
+      needsMailFallback: this.state.formSubmitted && !this.state.sentByServer,
+      submitLabel: this.state.sending ? 'Enviando…' : 'Enviar proposta de parceria',
+      submitOpacity: this.state.sending ? 0.6 : 1,
+      confirmTitle: this.state.sentByServer ? 'Proposta enviada' : 'Quase pronto',
+      confirmText: this.state.sentByServer
+        ? 'Sua proposta chegou na caixa de entrada do posto. Nossa equipe vai analisar e entrar em contato pelo canal informado.'
+        : 'Não conseguimos enviar automaticamente, então abrimos seu programa de e-mail com a proposta já preenchida — basta confirmar o envio. Se preferir, chame no WhatsApp.',
+      onNameChange: (e) => this.updateField('name', e.target.value),
+      onCompanyChange: (e) => this.updateField('company', e.target.value),
+      onEmailChange: (e) => this.updateField('email', e.target.value),
+      onPhoneChange: (e) => this.updateField('phone', e.target.value),
+      onTypeChange: (e) => this.updateField('type', e.target.value),
+      onMessageChange: (e) => this.updateField('message', e.target.value),
+      handleSubmit: (e) => this.handleSubmit(e),
+      resetForm: () => this.setState({ formSubmitted: false, formData: { name: '', company: '', email: '', phone: '', type: '', message: '' } })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

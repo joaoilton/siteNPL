@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes glowpulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+    /* uma única gota que se forma no fim da frase e cai */
+    @keyframes gota-cai {
+      0%   { opacity: 0; transform: translateY(-0.1em) scale(0.3, 0.5); }
+      14%  { opacity: 1; transform: translateY(0) scale(1, 1.15); }
+      42%  { opacity: 1; transform: translateY(0.12em) scale(0.95, 1.35); }
+      100% { opacity: 0; transform: translateY(2.6em) scale(0.8, 1.6); }
+    }
+    @media (prefers-reduced-motion: reduce) { [data-gota] { animation: none !important; } }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="inicio" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="hero" data-fx="glow" style="position:relative;min-height:620px;display:flex;align-items:flex-end;overflow:hidden">
+  <image-slot id="hero-foto" src="uploads/WhatsApp Image 2025-09-19 at 19.24.26.jpeg" fit="cover" shape="rect" placeholder="Foto do posto à noite" data-fx="parallax" data-fx-factor="0.05" data-fx-max="8" style="position:absolute;inset:-2%;width:auto;height:auto;filter:saturate(0.95) contrast(1.06)"></image-slot>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,67,153,0.62) 0%,rgba(0,45,110,0.6) 45%,rgba(0,34,77,0.92) 100%)"></div>
+  <div data-fx="ghost" data-fx-factor="0.09" data-fx-max="26" aria-hidden="true" style="position:absolute;left:-6%;top:14%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(150px,27vw,430px);line-height:0.8;letter-spacing:-0.045em;white-space:nowrap;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,0.22);pointer-events:none;user-select:none;z-index:1">NEÓPOLIS</div>
+  <div style="position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:110px 20px 70px;width:100%;box-sizing:border-box">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+      <span style="width:9px;height:9px;background:{{ statusColor }};transform:rotate(45deg);animation:glowpulse 2.4s ease-in-out infinite;display:inline-block;flex-shrink:0"></span>
+      <span style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;color:#ffffff;text-transform:uppercase">{{ statusText }}</span>
+    </div>
+    <h1 style="font-weight:800;font-size:clamp(40px,6.8vw,84px);line-height:1;letter-spacing:-0.02em;color:#ffffff;margin:0 0 22px;max-width:900px;text-wrap:balance">NPL Posto Neópolis<br>qualidade até a última <span style="position:relative;display:inline-block">gota<span data-gota aria-hidden="true" style="position:absolute;right:2px;bottom:-0.18em;width:0.13em;height:0.13em;background:#00E39A;border-radius:50% 50% 55% 55% / 62% 62% 45% 45%;box-shadow:0 0 14px rgba(0,227,154,0.6);opacity:0;animation:gota-cai 3.4s cubic-bezier(.45,0,.75,1) 1.1s infinite"></span></span></h1>
+    <p style="font-size:clamp(17px,2vw,21px);line-height:1.55;color:#e2ebf8;margin:0 0 38px;max-width:540px;font-weight:500">Combustível de qualidade, troca de óleo e um programa de fidelidade que devolve valor a cada litro. Aqui em Neópolis, Natal.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a href="Produtos.dc.html" style="padding:16px 32px;background:#00A972;color:#ffffff;font-weight:700;text-decoration:none;font-size:15px;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)">Consultar produtos</a>
+      <a href="Club-Vip-NPL.dc.html" style="padding:16px 32px;background:#ffffff;color:#004399;font-weight:700;text-decoration:none;font-size:15px;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%)">Conheça o Club Vip NPL</a>
+    </div>
+  </div>
+</section>
+
+<div data-fx="marquee" style="overflow:hidden;background:#00A972;padding:15px 0">
+  <div data-fx-track style="display:flex;width:max-content;animation:ticker 52s linear infinite;font-size:13px;font-weight:600;letter-spacing:0.14em;color:#ffffff;white-space:nowrap">
+    <div style="display:flex;gap:34px;padding-right:34px;flex:0 0 auto">
+      <span>TROCA DE ÓLEO</span><span>◆</span><span>CONVENIÊNCIA</span><span>◆</span><span>BORRACHARIA</span><span>◆</span><span>ALINHAMENTO</span><span>◆</span><span>LUBRIFICANTES</span><span>◆</span><span>FILTRO DE AR</span><span>◆</span><span>FILTRO DE ÓLEO</span><span>◆</span><span>FILTRO DE CABINE</span><span>◆</span><span>FILTRO DE COMBUSTÍVEL</span><span>◆</span><span>ADITIVOS E FLUIDOS</span><span>◆</span><span>PALHETAS</span><span>◆</span><span>GRAXAS</span><span>◆</span><span>PEÇAS E ACESSÓRIOS</span><span>◆</span><span>CLUB VIP NPL</span><span>◆</span>
+    </div>
+    <div style="display:flex;gap:34px;padding-right:34px;flex:0 0 auto">
+      <span>TROCA DE ÓLEO</span><span>◆</span><span>CONVENIÊNCIA</span><span>◆</span><span>BORRACHARIA</span><span>◆</span><span>ALINHAMENTO</span><span>◆</span><span>LUBRIFICANTES</span><span>◆</span><span>FILTRO DE AR</span><span>◆</span><span>FILTRO DE ÓLEO</span><span>◆</span><span>FILTRO DE CABINE</span><span>◆</span><span>FILTRO DE COMBUSTÍVEL</span><span>◆</span><span>ADITIVOS E FLUIDOS</span><span>◆</span><span>PALHETAS</span><span>◆</span><span>GRAXAS</span><span>◆</span><span>PEÇAS E ACESSÓRIOS</span><span>◆</span><span>CLUB VIP NPL</span><span>◆</span>
+    </div>
+  </div>
+</div>
+
+<section data-screen-label="numeros" style="background:#f3f6fb;padding:0 20px 0">
+  <div data-fx="reveal" style="max-width:1240px;margin:0 auto;padding:56px 0 52px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 48px">
+    <div style="display:flex;align-items:baseline;gap:14px">
+      <span data-fx="count" data-to="{{ yearsActive }}" style="font-family:'Montserrat',sans-serif;font-size:clamp(64px,11vw,132px);font-weight:800;letter-spacing:-0.03em;color:#004399;line-height:0.85">0</span>
+      <span style="font-family:'Montserrat',sans-serif;font-size:clamp(18px,2.4vw,26px);font-weight:800;letter-spacing:0.02em;color:#00A972">anos</span>
+    </div>
+    <div style="flex:1;min-width:260px;max-width:520px">
+      <div style="height:5px;width:78px;background:#00A972;transform:skewX(-13deg);margin-bottom:18px"></div>
+      <p style="font-size:clamp(16px,1.8vw,19px);line-height:1.65;color:#40506b;margin:0">Atendendo o bairro Neópolis desde 20 de outubro de 1991. Três décadas abastecendo as mesmas famílias, com a mesma equipe por perto.</p>
+    </div>
+  </div>
+  <div style="max-width:1240px;margin:0 auto;height:5px;overflow:hidden"><div style="height:5px;width:100%;background:#00A972;transform:skewX(-13deg)"></div></div>
+</section>
+
+<section data-fx="reveal" style="max-width:1240px;margin:0 auto;padding:70px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
+  <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #004399;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+    <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">01</div>
+    <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Troca de óleo</h3>
+    <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Serviço próprio, com produtos de qualidade e equipe treinada.</p>
+  </div>
+  <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #00A972;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+    <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">02</div>
+    <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Produtos de qualidade</h3>
+    <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Óleo lubrificante, filtros, aditivos, graxas e outros agregados.</p>
+  </div>
+  <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #004399;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+    <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">03</div>
+    <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Fidelidade que rende</h3>
+    <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Pontos a cada litro, prêmios, descontos e promoções no app.</p>
+  </div>
+  <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #00A972;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+    <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">04</div>
+    <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Atendimento local</h3>
+    <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Unidade única em Neópolis, com uma equipe de cerca de 20 pessoas.</p>
+  </div>
+</section>
+
+<section data-screen-label="resumo" style="background:#f3f6fb;padding:60px 20px;overflow:hidden">
+  <div style="max-width:1240px;margin:0 auto">
+    <h2 style="font-weight:800;font-size:clamp(30px,4.6vw,58px);line-height:1;letter-spacing:-0.025em;color:#004399;margin:0 0 8px">Navegue pelo site</h2>
+    <p style="font-size:14px;color:#8a99ae;margin:0 0 26px">Vá direto ao assunto que você procura</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:0 40px;border-top:1px solid #dfe6f1" data-fx="reveal">
+      <a href="Produtos.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Produtos</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">285 itens em 11 categorias</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Club-Vip-NPL.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Club Vip NPL</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Pontos, prêmios e simulador</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Nossa-Historia.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Nossa História</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Quem somos e nossos valores</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Estrutura.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Estrutura</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Bombas, serviços e fotos da unidade</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Pagamento.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Pagamento</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Dinheiro, PIX, cartões e frota</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Localizacao.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Localização</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Endereço, mapa e rota</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Duvidas.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Dúvidas</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Perguntas frequentes</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+      <a href="Parcerias.dc.html" style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:18px 0;border-bottom:1px solid #dfe6f1;text-decoration:none">
+        <span><span style="display:block;font-size:15.5px;font-weight:700;color:#004399">Parcerias</span><span style="display:block;font-size:13.5px;color:#5b6b83;margin-top:3px">Frotas, fornecedores e ações locais</span></span>
+        <span style="font-size:15px;color:#00A972;font-weight:700">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this.clock = setInterval(() => this.forceUpdate(), 60000); }
+  componentWillUnmount() { clearInterval(this.clock); }
+  renderVals() {
+    const now = new Date();
+    const hour = now.getHours();
+    const isOpen = hour >= 6 && hour < 22;
+    // Posto em operação desde 20/10/1991.
+    const opening = new Date(1991, 9, 20);
+    let yearsActive = now.getFullYear() - opening.getFullYear();
+    const before = now.getMonth() < 9 || (now.getMonth() === 9 && now.getDate() < 20);
+    if (before) yearsActive -= 1;
+    return {
+      yearsActive,
+      statusText: isOpen ? 'Aberto agora · até 22h' : 'Fechado · abre às 6h',
+      statusColor: isOpen ? '#00E39A' : '#ffb3a7'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

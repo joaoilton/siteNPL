@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Club Vip NPL — Posto Neópolis</title>
+<meta name="description" content="Club Vip NPL: acumule pontos a cada litro abastecido no Posto Neópolis e troque por prêmios e descontos. Simule seus pontos.">
+<meta property="og:title" content="NPL Posto Neópolis">
+<meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+<meta property="og:image" content="assets/img/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="header-bar">
+    <span>ALAMEDA DAS ACÁCIAS, 1038 — NEÓPOLIS, NATAL/RN</span>
+    <span>06H — 22H, TODOS OS DIAS</span>
+    <a href="tel:+5584991801090">(84) 99180-1090</a>
+    <a class="header-bar-ig" href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener">INSTAGRAM</a>
+  </div>
+  <div class="header-row">
+    <a class="header-logo" href="inicio.html">
+      <img src="assets/img/uploads/logo.png" alt="Posto Neópolis NPL — página inicial">
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" id="site-nav" aria-label="Navegação principal">
+      <a class="nav-link" href="inicio.html">Início</a>
+      <a class="nav-link" href="nossa-historia.html">Nossa História</a>
+      <a class="nav-link" href="estrutura.html">Estrutura</a>
+      <a class="nav-link" href="produtos.html">Produtos</a>
+      <a class="nav-link" href="agendar.html">Agendar</a>
+      <a class="nav-link is-active" href="club-vip-npl.html" aria-current="page">Club Vip NPL</a>
+      <a class="nav-link" href="pagamento.html">Pagamento</a>
+      <a class="nav-link" href="localizacao.html">Localização</a>
+      <a class="nav-link" href="duvidas.html">Dúvidas</a>
+      <a class="nav-link" href="parcerias.html">Parcerias</a>
+      <a class="nav-cta" href="https://wa.me/5584991801090" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </nav>
+  </div>
+  <div class="header-progress" aria-hidden="true"><div class="header-progress-bar"></div></div>
+</header>
+
+<main id="conteudo">
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">PROGRAMA DE FIDELIDADE</div>
+    <h1 class="page-hero-title" style="margin:0">Club Vip NPL</h1>
+  </div>
+</section>
+
+<section class="club-hero" data-fx="glow">
+  <div class="club-hero-ghost" data-fx="ghost" data-fx-factor="0.12" aria-hidden="true">CLUB VIP</div>
+  <div class="club-hero-grid">
+    <div>
+      <h2>Cada litro vira ponto.<br>Cada ponto vira prêmio.</h2>
+      <p>O Club Vip NPL é o programa de fidelidade do posto. Baixe o app, cadastre-se e acompanhe seu saldo a cada abastecimento.</p>
+
+      <div class="simulator-card" data-club-sim>
+        <div class="simulator-label">SIMULADOR DE PONTOS</div>
+        <div class="fuel-toggle">
+          <button class="fuel-btn is-active" data-fuel="comum">Gasolina comum</button>
+          <button class="fuel-btn" data-fuel="aditivada">Gasolina aditivada</button>
+        </div>
+        <label class="range-label" for="sim-litros">LITROS POR ABASTECIMENTO</label>
+        <input type="range" id="sim-litros" min="5" max="80" step="1" value="30" class="range-slider" data-liters aria-describedby="sim-saida">
+        <div class="sim-stats" id="sim-saida" aria-live="polite">
+          <div><div class="sim-stat-num"><span data-liters-out>30</span><span class="sim-stat-unit"> L</span></div><div class="sim-stat-label">ABASTECIDOS</div></div>
+          <div><div class="sim-stat-num is-white" data-points-fill>30</div><div class="sim-stat-label">PONTOS NESTE ABASTECIMENTO</div></div>
+          <div><div class="sim-stat-num is-white" data-points-month>120</div><div class="sim-stat-label">EM 4 ABASTECIMENTOS</div></div>
+        </div>
+        <div class="sim-progress" data-next-target>
+          <div class="sim-progress-head"><span>PRÓXIMO PRÊMIO · <span data-next-name></span></span><span data-next-missing></span></div>
+          <div class="sim-progress-track"><div class="sim-progress-bar" data-next-bar></div></div>
+        </div>
+        <p>Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro. Simulação ilustrativa — o saldo oficial é o do aplicativo.</p>
+      </div>
+    </div>
+
+    <div class="app-mockup" data-fx="reveal-fade">
+      <div class="app-mockup-phone app-mockup-left"><img src="assets/img/uploads/club-screenshot-1.jpg" alt="Tela inicial do app"></div>
+      <div class="app-mockup-phone app-mockup-right"><img src="assets/img/uploads/club-screenshot-3.jpg" alt="Detalhes de um prêmio"></div>
+      <div class="app-mockup-phone app-mockup-center"><img src="assets/img/uploads/club-screenshot-2.jpg" alt="Prêmios e descontos"></div>
+    </div>
+  </div>
+</section>
+
+<section class="premios-section" data-premios>
+  <div class="premios-inner">
+    <div class="premios-head">
+      <h3>Prêmios que você alcança</h3>
+      <span class="premios-count" data-unlocked-count></span>
+    </div>
+    <p>Com <strong><span data-points-month>120</span> pontos</strong> em 4 abastecimentos, conforme o simulador acima. Lanches e bebidas são da Budega Paulista, nossa conveniência parceira.</p>
+
+    <div class="rewards-grid" data-fx="reveal" data-rewards-grid></div>
+    <p class="no-rewards" data-no-rewards hidden>Aumente os litros no simulador para ver os primeiros prêmios disponíveis.</p>
+
+    <div class="next-rewards" data-next-up>
+      <div class="next-rewards-label">PRÓXIMOS PRÊMIOS</div>
+      <div class="next-rewards-grid" data-next-up-grid></div>
+    </div>
+  </div>
+</section>
+
+<section class="detalhes-section">
+  <div class="detalhes-inner">
+    <div class="steps-row">
+      <div class="steps-line" aria-hidden="true"></div>
+      <div class="steps-grid" data-fx="reveal">
+        <div class="step-card"><div class="step-rule"></div><div class="step-num">01</div><div class="step-title">Abastece</div></div>
+        <div class="step-card"><div class="step-rule"></div><div class="step-num">02</div><div class="step-title">Acumula pontos</div></div>
+        <div class="step-card"><div class="step-rule"></div><div class="step-num">03</div><div class="step-title">Resgata prêmio</div></div>
+      </div>
+    </div>
+    <div class="detail-list">
+      <div class="detail-row"><span class="detail-num">01</span><div><h3>Pontos em cada abastecimento</h3><p>Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro.</p></div></div>
+      <div class="detail-row"><span class="detail-num">02</span><div><h3>Resgate de prêmios</h3><p>Troque seus pontos por prêmios e descontos ao atingir a pontuação necessária.</p></div></div>
+      <div class="detail-row"><span class="detail-num">03</span><div><h3>Promoções programadas</h3><p>Sorteios, pontuação em dobro ou triplo, desconto por litro, desconto fixo e roleta de prêmios — liberados periodicamente pelo posto.</p></div></div>
+      <div class="detail-row"><span class="detail-num">04</span><div><h3>Campanha de aniversário</h3><p>No dia do seu aniversário você ganha um desconto especial.</p></div></div>
+    </div>
+    <div class="store-links">
+      <a href="https://apps.apple.com/br/app/club-vip-npl/id6749268854" target="_blank" rel="noopener" class="btn-store btn-store-green">Baixar na App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=br.com.clubpetro.v2.redeneopolisrn&hl=pt_BR" target="_blank" rel="noopener" class="btn-store btn-store-outline">Disponível no Google Play</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="footer-stripe"><div class="footer-stripe-inner"></div></div>
+
+<a class="whatsapp-fab" href="https://wa.me/5584991801090" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" width="19" height="19" fill="#ffffff" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.23.85.86-3.15-.2-.33a8.2 8.2 0 01-1.26-4.24c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23s-3.69 8.24-8.19 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.79.97-.14.16-.29.19-.54.06-.25-.12-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.74 2.78 4.22 3.79 2.06.84 2.48.67 2.93.63.45-.04 1.45-.59 1.66-1.17.2-.57.2-1.06.14-1.17-.06-.1-.22-.16-.47-.28z"></path></svg>
+  <span data-wa-label>WhatsApp</span>
+</a>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/img/uploads/logo-footer.png" alt="Posto Neópolis NPL">
+      <div class="footer-brand-name">POSTO NEÓPOLIS</div>
+      <p>Unidade única no bairro Neópolis, Natal/RN.</p>
+    </div>
+    <div class="footer-col">
+      <h4>NAVEGAÇÃO</h4>
+      <div class="footer-links">
+        <a href="nossa-historia.html">Nossa História</a>
+        <a href="estrutura.html">Estrutura</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="agendar.html">Agendar troca de óleo</a>
+        <a href="club-vip-npl.html">Club Vip NPL</a>
+        <a href="pagamento.html">Formas de pagamento</a>
+        <a href="duvidas.html">Dúvidas frequentes</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>CONTATO</h4>
+      <div class="footer-links">
+        <span>Alameda das Acácias, 1038</span>
+        <span>Neópolis, Natal/RN</span>
+        <a href="tel:+5584991801090">(84) 99180-1090</a>
+        <span>Todos os dias, 6h às 22h</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>REDES</h4>
+      <div class="footer-links">
+        <a class="footer-link-green" href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener">@nplpostoneopolis</a>
+        <a class="footer-link-green" href="https://wa.me/5584991801090" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span data-year>2026</span> POSTO NEÓPOLIS</span>
+    <span>NEÓPOLIS · NATAL/RN</span>
+  </div>
+</footer>
+
+<script src="assets/js/effects.js"></script>
+<script src="assets/js/data-rewards.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

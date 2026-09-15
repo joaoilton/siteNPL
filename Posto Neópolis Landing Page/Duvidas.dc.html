@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    button { font-family: 'Montserrat', sans-serif; }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="duvidas" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="page-hero" style="background:linear-gradient(120deg,#004399 0%,#002a63 100%);padding:70px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:14px">AJUDA</div>
+    <h1 style="font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;color:#ffffff;margin:0;max-width:760px">Dúvidas frequentes</h1>
+  </div>
+</section>
+
+<section data-screen-label="faq" style="position:relative;background:#ffffff;padding:80px 20px;overflow:hidden">
+  <img src="uploads/1.png" alt="" aria-hidden="true" style="position:absolute;left:-5%;top:12%;width:min(460px,46vw);opacity:0.04;pointer-events:none;user-select:none">
+  <div style="position:relative;max-width:900px;margin:0 auto">
+    <h2 style="font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 36px">Perguntas que mais recebemos</h2>
+    <div>
+      <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="13">
+        <div style="border-top:1px solid #e2e9f4">
+          <button onclick="{{ item.toggle }}" style="width:100%;text-align:left;padding:24px 0;background:transparent;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#10243d">
+            <span style="font-size:18px;font-weight:600">{{ item.q }}</span>
+            <span style="font-size:22px;font-weight:700;color:#00A972;flex-shrink:0">{{ item.symbol }}</span>
+          </button>
+          <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 0 26px;font-size:16px;line-height:1.75;color:#40506b;max-width:680px">{{ item.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <div style="border-top:1px solid #e2e9f4"></div>
+    </div>
+    <div style="margin-top:44px;background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);padding:34px 30px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center">
+      <div>
+        <h3 style="font-size:20px;font-weight:800;color:#004399;margin:0 0 8px">Não encontrou sua dúvida?</h3>
+        <p style="font-size:15px;color:#5b6b83;margin:0">Fale com a nossa equipe pelo WhatsApp.</p>
+      </div>
+      <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:15px 28px;background:#00A972;color:#ffffff;font-weight:700;clip-path:polygon(11px 0,100% 0,calc(100% - 11px) 100%,0 100%);text-decoration:none;font-size:15px;white-space:nowrap">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { faqOpen: null };
+  faqData = [
+    { q: 'Quais formas de pagamento vocês aceitam?', a: 'Aceitamos dinheiro, PIX, cartão de débito, cartão de crédito e vale-combustível/cartão frota. A lista completa está na página Formas de Pagamento.' },
+    { q: 'O posto faz troca de óleo?', a: 'Sim, oferecemos serviço de troca de óleo com produtos de qualidade.' },
+    { q: 'Vocês vendem produtos além do combustível?', a: 'Sim: óleo lubrificante, filtros, aditivos, graxas e outros produtos agregados. Você pode consultar o catálogo completo na página Produtos.' },
+    { q: 'Como funciona o programa de fidelidade Club Vip NPL?', a: 'Você acumula pontos a cada litro abastecido — 1 ponto por litro na gasolina comum e 2 pontos por litro na aditivada — e troca esses pontos por prêmios e descontos. Periodicamente o posto libera promoções como sorteios, pontuação em dobro ou triplo, desconto por litro, desconto fixo e roleta de prêmios. No seu aniversário, você ganha um desconto especial.' },
+    { q: 'Qual o horário de funcionamento?', a: 'Funcionamos todos os dias, das 6h às 22h.' },
+    { q: 'Onde o posto fica?', a: 'Alameda das Acácias, 1038 — Neópolis, Natal/RN, CEP 59080-560. Na página Localização você abre a rota direto no Google Maps ou no Waze.' },
+    { q: 'O posto tem conveniência, borracharia e alinhamento?', a: 'Sim. Os três funcionam no próprio posto, junto com a troca de óleo: conveniência com bebidas, lanches e itens do dia a dia, borracharia para reparo e calibragem de pneus e serviço de alinhamento.' },
+    { q: 'Como sei se um produto está disponível antes de ir até o posto?', a: 'A página Produtos mostra o catálogo completo por categoria e indica se cada item está disponível ou não, sem preços. A lista segue a última atualização do estoque, então vale confirmar pelo WhatsApp antes de sair de casa.' },
+    { q: 'Com quais marcas vocês trabalham?', a: 'Entre outras, Mobil, Petronas, Lubrax, Bardahl, STP, ACDelco, Mann-Filter, Tecfil, Wega, VR Lub, Maxon Oil, Radnaq, Orbi Química e Uni. As marcas ficam listadas no fim da página Produtos.' },
+    { q: 'Como baixo o aplicativo do Club Vip NPL?', a: 'O aplicativo está disponível na Google Play. O link para download fica na página Club Vip NPL.' },
+    { q: 'Como resgato os prêmios do Club Vip NPL?', a: 'O resgate é feito pelo aplicativo, com os pontos acumulados nos abastecimentos, e a retirada acontece aqui no posto. Os lanches disponíveis são da conveniência parceira; os demais prêmios são itens automotivos.' },
+    { q: 'O posto tem banheiro?', a: 'Sim, banheiro limpo e disponível para quem para no posto.' },
+    { q: 'Quero ser fornecedor ou parceiro do posto. Como faço?', a: 'Na página Parcerias existe um formulário para envio da proposta. Nossa equipe analisa e entra em contato pelo canal informado.' }
+  ];
+  renderVals() {
+    return {
+      faqItems: this.faqData.map((item, i) => ({
+        q: item.q,
+        a: item.a,
+        isOpen: this.state.faqOpen === i,
+        symbol: this.state.faqOpen === i ? '−' : '+',
+        toggle: () => this.setState(s => ({ faqOpen: s.faqOpen === i ? null : i }))
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #ffffff; font-family: 'Montserrat', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    input, select, textarea, button { font-family: 'Montserrat', sans-serif; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes glowpulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+  </style>
+</helmet>
+
+<div style="background:#ffffff">
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:60;background:#ffffff;box-shadow:0 2px 14px rgba(0,45,110,0.08)" data-screen-label="header">
+    <div style="background:#004399;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;padding:8px 20px;font-size:12.5px;font-weight:500;letter-spacing:0.04em;color:#d6e3f7">
+      <span>ALAMEDA DAS ACÁCIAS, 1038 — NEÓPOLIS, NATAL/RN</span>
+      <span>06H — 22H, TODOS OS DIAS</span>
+      <a href="tel:+5584991801090" style="color:#d6e3f7;text-decoration:none">(84) 99180-1090</a>
+      <a href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener" style="color:#7dd8b4;text-decoration:none;font-weight:600">INSTAGRAM</a>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+      <img src="uploads/1.png" alt="Posto Neópolis NPL" style="height:40px;width:auto;display:block">
+      <nav style="display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;align-items:center">
+        <a href="#hero" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Início</a>
+        <a href="#historia" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">História</a>
+        <a href="#valores" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Missão e Valores</a>
+        <a href="#estrutura" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Estrutura</a>
+        <a href="#app" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Club Vip NPL</a>
+        <a href="#pagamento" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Pagamento</a>
+        <a href="#localizacao" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Localização</a>
+        <a href="#faq" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Dúvidas</a>
+        <a href="#parcerias" style="padding:10px 11px;font-size:13.5px;font-weight:500;color:#2c3e57;text-decoration:none">Parcerias</a>
+        <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:11px 22px;font-size:13.5px;font-weight:700;color:#ffffff;background:#00A972;border-radius:30px;text-decoration:none;margin-left:8px">Falar no WhatsApp</a>
+      </nav>
+    </div>
+    <div style="height:3px;background:#e6ecf6"><div style="height:3px;background:linear-gradient(90deg,#004399,#00A972);width:{{ scrollProgress }}"></div></div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" data-screen-label="hero" style="position:relative;min-height:620px;display:flex;align-items:flex-end;overflow:hidden">
+    <div style="position:absolute;inset:-1%;background-image:{{ heroBgImage }};background-size:cover;background-position:center"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,67,153,0.62) 0%,rgba(0,45,110,0.6) 45%,rgba(0,34,77,0.92) 100%)"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto;padding:110px 20px 70px;width:100%;box-sizing:border-box">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+        <span style="width:9px;height:9px;border-radius:50%;background:{{ statusColor }};animation:glowpulse 2.4s ease-in-out infinite;display:inline-block"></span>
+        <span style="font-size:12.5px;font-weight:600;letter-spacing:0.12em;color:#ffffff;text-transform:uppercase">{{ statusText }}</span>
+      </div>
+      <h1 style="font-weight:800;font-size:clamp(40px,6.8vw,84px);line-height:1;letter-spacing:-0.02em;color:#ffffff;margin:0 0 22px;max-width:900px;text-wrap:balance">O posto do bairro,<br>com a estrutura de uma rede.</h1>
+      <p style="font-size:clamp(17px,2vw,21px);line-height:1.55;color:#e2ebf8;margin:0 0 38px;max-width:540px;font-weight:500">Combustível de qualidade, troca de óleo e um programa de fidelidade que devolve valor a cada litro. Aqui em Neópolis, Natal.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#localizacao" style="padding:16px 30px;background:#00A972;color:#ffffff;font-weight:700;border-radius:30px;text-decoration:none;font-size:15px">Ver Localização</a>
+        <a href="#app" style="padding:16px 30px;background:#ffffff;color:#004399;font-weight:700;border-radius:30px;text-decoration:none;font-size:15px">Conheça o Club Vip NPL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TICKER ============ -->
+  <div style="overflow:hidden;background:#00A972;padding:15px 0">
+    <div style="display:flex;width:200%;animation:ticker 34s linear infinite;font-size:13px;font-weight:600;letter-spacing:0.14em;color:#ffffff">
+      <div style="display:flex;gap:34px;width:50%;flex-shrink:0">
+        <span>TROCA DE ÓLEO</span><span>◆</span><span>ÓLEO LUBRIFICANTE</span><span>◆</span><span>FILTROS</span><span>◆</span><span>ADITIVOS</span><span>◆</span><span>GRAXAS</span><span>◆</span><span>CLUB VIP NPL</span><span>◆</span><span>ATENDIMENTO LOCAL</span><span>◆</span>
+      </div>
+      <div style="display:flex;gap:34px;width:50%;flex-shrink:0">
+        <span>TROCA DE ÓLEO</span><span>◆</span><span>ÓLEO LUBRIFICANTE</span><span>◆</span><span>FILTROS</span><span>◆</span><span>ADITIVOS</span><span>◆</span><span>GRAXAS</span><span>◆</span><span>CLUB VIP NPL</span><span>◆</span><span>ATENDIMENTO LOCAL</span><span>◆</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DIFERENCIAIS ============ -->
+  <section style="max-width:1240px;margin:0 auto;padding:70px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
+    <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #004399;border-radius:12px;padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+      <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">01</div>
+      <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Troca de óleo</h3>
+      <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Serviço próprio, com produtos de qualidade e equipe treinada.</p>
+    </div>
+    <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #00A972;border-radius:12px;padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+      <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">02</div>
+      <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Produtos de qualidade</h3>
+      <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Óleo lubrificante, filtros, aditivos, graxas e outros agregados.</p>
+    </div>
+    <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #004399;border-radius:12px;padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+      <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">03</div>
+      <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Fidelidade que rende</h3>
+      <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Pontos a cada litro, prêmios, descontos e promoções no app.</p>
+    </div>
+    <div style="background:#ffffff;border:1px solid #e2e9f4;border-top:4px solid #00A972;border-radius:12px;padding:30px 26px;box-shadow:0 6px 20px rgba(0,45,110,0.05)">
+      <div style="font-size:12.5px;font-weight:700;color:#00A972;letter-spacing:0.1em;margin-bottom:14px">04</div>
+      <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 8px">Atendimento local</h3>
+      <p style="font-size:14.5px;line-height:1.6;color:#5b6b83;margin:0">Unidade única em Neópolis, com uma equipe de cerca de 20 pessoas.</p>
+    </div>
+  </section>
+
+  <!-- ============ NOSSA HISTÓRIA ============ -->
+  <!-- TODO: CONTEÚDO GENÉRICO — SUBSTITUIR DEPOIS pelo histórico real do Posto Neópolis -->
+  <section id="historia" data-screen-label="historia" style="background:#f3f6fb;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:60px">
+      <div>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">01 — NOSSA HISTÓRIA</div>
+        <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0">Um posto que cresceu junto com o bairro</h2>
+      </div>
+      <div>
+        <p style="font-size:16.5px;line-height:1.8;color:#40506b;margin:0 0 20px">O Posto Neópolis nasceu do sonho de uma família que decidiu investir no bairro onde vive, oferecendo à vizinhança um lugar de confiança para abastecer o carro e cuidar do veículo. Desde o início, o compromisso foi simples: atender bem, vender produtos de qualidade e manter as portas abertas todos os dias para quem precisa.</p>
+        <p style="font-size:16.5px;line-height:1.8;color:#40506b;margin:0 0 20px">Com o tempo, a estrutura foi crescendo. Novas bombas, novos serviços e uma equipe cada vez maior passaram a fazer parte do dia a dia do posto, sempre mantendo o mesmo cuidado com quem chega para abastecer.</p>
+        <p style="font-size:16.5px;line-height:1.8;color:#40506b;margin:0">Hoje, o Posto Neópolis conta com uma estrutura moderna, equipe treinada e uma proposta clara: ser a opção de confiança para quem mora e trabalha no bairro Neópolis, oferecendo combustível de qualidade, produtos agregados e um atendimento próximo, como só um posto do bairro pode oferecer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MISSÃO, VISÃO E VALORES ============ -->
+  <!-- TODO: CONTEÚDO GENÉRICO — SUBSTITUIR DEPOIS -->
+  <section id="valores" data-screen-label="valores" style="background:#004399;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:40px">02 — MISSÃO, VISÃO E VALORES</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <div style="background:#ffffff;border-radius:14px;padding:36px 30px">
+          <h3 style="font-weight:700;font-size:22px;color:#004399;margin:0 0 14px">Missão</h3>
+          <p style="font-size:15.5px;line-height:1.75;color:#40506b;margin:0">Oferecer combustível de qualidade e produtos agregados com atendimento confiável e próximo, contribuindo para o dia a dia de quem mora e trabalha no bairro Neópolis.</p>
+        </div>
+        <div style="background:#ffffff;border-radius:14px;padding:36px 30px">
+          <h3 style="font-weight:700;font-size:22px;color:#00A972;margin:0 0 14px">Visão</h3>
+          <p style="font-size:15.5px;line-height:1.75;color:#40506b;margin:0">Ser reconhecido como o posto de referência do bairro Neópolis em qualidade, confiança e atendimento, crescendo de forma sólida junto com a comunidade que atende.</p>
+        </div>
+        <div style="background:#ffffff;border-radius:14px;padding:36px 30px">
+          <h3 style="font-weight:700;font-size:22px;color:#004399;margin:0 0 16px">Valores</h3>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ valoresList }}" as="valor" hint-placeholder-count="5">
+              <li style="font-size:15px;color:#40506b;display:flex;gap:12px;align-items:baseline"><span style="font-size:12px;font-weight:700;color:#00A972">{{ valor.num }}</span>{{ valor.label }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NOSSA ESTRUTURA ============ -->
+  <section id="estrutura" data-screen-label="estrutura" style="background:#ffffff;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">03 — NOSSA ESTRUTURA</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 46px;max-width:640px">O que você encontra no Posto Neópolis</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:start">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid #e2e9f4">
+            <div><h3 style="font-size:19px;font-weight:700;color:#10243d;margin:0 0 6px">Bombas de combustível</h3><p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Abastecimento rápido e organizado para todos os tipos de veículo.</p></div>
+            <span style="font-size:38px;font-weight:800;color:#00A972;line-height:1">04</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid #e2e9f4">
+            <div><h3 style="font-size:19px;font-weight:700;color:#10243d;margin:0 0 6px">Quadras</h3><p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Estrutura ampla para atender vários veículos ao mesmo tempo.</p></div>
+            <span style="font-size:38px;font-weight:800;color:#004399;line-height:1">02</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid #e2e9f4">
+            <div><h3 style="font-size:19px;font-weight:700;color:#10243d;margin:0 0 6px">Sêxtuplas</h3><p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Mais pontos de abastecimento nos horários de maior movimento.</p></div>
+            <span style="font-size:38px;font-weight:800;color:#00A972;line-height:1">02</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-top:1px solid #e2e9f4;border-bottom:1px solid #e2e9f4">
+            <div><h3 style="font-size:19px;font-weight:700;color:#10243d;margin:0 0 6px">Troca de óleo e produtos agregados</h3><p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Óleo lubrificante, filtros, aditivos, graxas e outros produtos.</p></div>
+            <span style="font-size:34px;font-weight:800;color:#004399;line-height:1">✓</span>
+          </div>
+        </div>
+        <div>
+          <!-- Galeria: clique amplia (lightbox) -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <img src="uploads/WhatsApp Image 2025-09-19 at 19.24.26 (2).jpeg" alt="Pista e cobertura do Posto Neópolis" onclick="{{ openPhoto0 }}" style="width:100%;height:170px;object-fit:cover;display:block;cursor:zoom-in;border-radius:10px">
+            <img src="uploads/WhatsApp Image 2025-09-19 at 19.24.24.jpeg" alt="Vista lateral do Posto Neópolis" onclick="{{ openPhoto1 }}" style="width:100%;height:170px;object-fit:cover;display:block;cursor:zoom-in;border-radius:10px">
+            <img src="uploads/WhatsApp Image 2025-09-19 at 19.24.26.jpeg" alt="Bombas do Posto Neópolis" onclick="{{ openPhoto2 }}" style="width:100%;height:170px;object-fit:cover;display:block;cursor:zoom-in;border-radius:10px">
+            <img src="uploads/WhatsApp Image 2025-09-19 at 19.24.24 (1).jpeg" alt="Fachada do Posto Neópolis à noite" onclick="{{ openPhoto3 }}" style="width:100%;height:170px;object-fit:cover;display:block;cursor:zoom-in;border-radius:10px">
+          </div>
+          <p style="font-size:11.5px;font-weight:600;letter-spacing:0.1em;color:#8a99ae;margin:14px 0 0">CLIQUE PARA AMPLIAR</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLUB VIP NPL ============ -->
+  <section id="app" data-screen-label="app" style="background:#f3f6fb;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">04 — CLUB VIP NPL</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:start">
+        <div>
+          <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;color:#004399;margin:0 0 20px">Cada litro vira ponto.<br>Cada ponto vira prêmio.</h2>
+          <p style="font-size:16.5px;line-height:1.7;color:#40506b;margin:0 0 34px;max-width:480px">O Club Vip NPL é o programa de fidelidade do posto. Baixe o app, cadastre-se e acompanhe seu saldo a cada abastecimento.</p>
+
+          <!-- SIMULADOR DE PONTOS -->
+          <div style="background:#ffffff;border:1px solid #e2e9f4;border-radius:14px;padding:28px;box-shadow:0 10px 26px rgba(0,45,110,0.07)">
+            <div style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;color:#8a99ae;margin-bottom:18px">SIMULADOR DE PONTOS</div>
+            <div style="display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap">
+              <button onclick="{{ setComum }}" style="flex:1;min-width:130px;padding:13px;background:{{ comumBg }};color:{{ comumColor }};border:1px solid #dbe4f1;font-size:14px;font-weight:600;cursor:pointer;border-radius:30px">Gasolina comum</button>
+              <button onclick="{{ setAditivada }}" style="flex:1;min-width:130px;padding:13px;background:{{ aditivadaBg }};color:{{ aditivadaColor }};border:1px solid #dbe4f1;font-size:14px;font-weight:600;cursor:pointer;border-radius:30px">Gasolina aditivada</button>
+            </div>
+            <label style="display:block;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae;margin-bottom:12px">LITROS POR ABASTECIMENTO</label>
+            <input type="range" min="5" max="80" step="1" value="{{ liters }}" oninput="{{ onLitersChange }}" style="width:100%;accent-color:#00A972;margin-bottom:24px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:20px;border-top:1px solid #e2e9f4;padding-top:22px">
+              <div>
+                <div style="font-size:34px;font-weight:800;color:#00A972;line-height:1">{{ liters }}<span style="font-size:15px;color:#8a99ae"> L</span></div>
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#8a99ae;margin-top:6px">ABASTECIDOS</div>
+              </div>
+              <div>
+                <div style="font-size:34px;font-weight:800;color:#004399;line-height:1">{{ pointsPerFill }}</div>
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#8a99ae;margin-top:6px">PONTOS NESTE ABASTECIMENTO</div>
+              </div>
+              <div>
+                <div style="font-size:34px;font-weight:800;color:#004399;line-height:1">{{ pointsPerMonth }}</div>
+                <div style="font-size:11px;font-weight:600;letter-spacing:0.06em;color:#8a99ae;margin-top:6px">EM 4 ABASTECIMENTOS</div>
+              </div>
+            </div>
+            <p style="font-size:13px;color:#8a99ae;margin:20px 0 0;line-height:1.6">Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro. Simulação ilustrativa — o saldo oficial é o do aplicativo.</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:18px;margin:34px 0">
+            <sc-for list="{{ appFeatures }}" as="feature" hint-placeholder-count="4">
+              <div style="display:flex;gap:16px;border-top:1px solid #dfe6f1;padding-top:18px">
+                <span style="font-size:12px;font-weight:700;color:#00A972;flex-shrink:0;margin-top:3px">{{ feature.num }}</span>
+                <div><h3 style="margin:0 0 5px;font-size:16.5px;font-weight:700;color:#10243d">{{ feature.title }}</h3><p style="margin:0;font-size:14.5px;color:#5b6b83;line-height:1.65">{{ feature.desc }}</p></div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="https://apps.apple.com/br/app/club-vip-npl/id6749268854" target="_blank" rel="noopener" style="padding:15px 26px;background:#004399;color:#ffffff;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px">Baixar na App Store</a>
+            <!-- TODO: substituir pelo link real da Google Play quando disponível -->
+            <a href="#" style="padding:15px 26px;background:#ffffff;border:1px solid #cfdbec;color:#004399;border-radius:30px;text-decoration:none;font-weight:700;font-size:14px">Disponível no Google Play</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <img src="uploads/WhatsApp Image 2026-08-19 at 17.01.37.jpeg" alt="Tela inicial do app Club Vip NPL" style="width:200px;height:auto;border-radius:14px;display:block;box-shadow:0 14px 32px rgba(0,45,110,0.16)">
+          <img src="uploads/WhatsApp Image 2026-08-19 at 17.01.37 (1).jpeg" alt="Prêmios e descontos no app Club Vip NPL" style="width:200px;height:auto;border-radius:14px;display:block;margin-top:30px;box-shadow:0 14px 32px rgba(0,45,110,0.16)">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORMAS DE PAGAMENTO ============ -->
+  <!-- TODO: CONTEÚDO GENÉRICO — confirmar formas de pagamento e bandeiras aceitas com o cliente -->
+  <section id="pagamento" data-screen-label="pagamento" style="background:#ffffff;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">05 — FORMAS DE PAGAMENTO</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 44px;max-width:560px">Pague do jeito que for melhor para você</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px">
+        <div style="background:#f3f6fb;border-radius:14px;padding:30px 26px">
+          <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 10px">Dinheiro</h3>
+          <p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Pagamento em espécie no caixa.</p>
+        </div>
+        <div style="background:#f3f6fb;border-radius:14px;padding:30px 26px">
+          <h3 style="font-size:17.5px;font-weight:700;color:#00A972;margin:0 0 10px">PIX</h3>
+          <p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Chave disponível no caixa, na hora do pagamento.</p>
+        </div>
+        <div style="background:#f3f6fb;border-radius:14px;padding:30px 26px">
+          <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 14px">Débito e crédito</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:11.5px;font-weight:700;color:#004399;background:#ffffff;border:1px solid #dbe4f1;padding:6px 12px;border-radius:20px">VISA</span>
+            <span style="font-size:11.5px;font-weight:700;color:#004399;background:#ffffff;border:1px solid #dbe4f1;padding:6px 12px;border-radius:20px">MASTERCARD</span>
+            <span style="font-size:11.5px;font-weight:700;color:#004399;background:#ffffff;border:1px solid #dbe4f1;padding:6px 12px;border-radius:20px">ELO</span>
+            <span style="font-size:11.5px;font-weight:700;color:#004399;background:#ffffff;border:1px solid #dbe4f1;padding:6px 12px;border-radius:20px">AMEX</span>
+          </div>
+        </div>
+        <div style="background:#f3f6fb;border-radius:14px;padding:30px 26px">
+          <h3 style="font-size:17.5px;font-weight:700;color:#00A972;margin:0 0 14px">Vale-combustível e frota</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:11.5px;font-weight:700;color:#00A972;background:#ffffff;border:1px solid #cdeade;padding:6px 12px;border-radius:20px">TICKET LOG</span>
+            <span style="font-size:11.5px;font-weight:700;color:#00A972;background:#ffffff;border:1px solid #cdeade;padding:6px 12px;border-radius:20px">ALELO FLEET</span>
+            <span style="font-size:11.5px;font-weight:700;color:#00A972;background:#ffffff;border:1px solid #cdeade;padding:6px 12px;border-radius:20px">VR FROTA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOCALIZAÇÃO ============ -->
+  <section id="localizacao" data-screen-label="localizacao" style="background:#f3f6fb;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">06 — LOCALIZAÇÃO</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:50px;align-items:start">
+        <div>
+          <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 30px">Alameda das Acácias, 1038</h2>
+          <div style="border-top:1px solid #dfe6f1;padding:20px 0;display:flex;justify-content:space-between;gap:20px">
+            <span style="font-size:11.5px;font-weight:700;color:#8a99ae;letter-spacing:0.1em">BAIRRO</span>
+            <span style="font-size:15px;color:#10243d;text-align:right;font-weight:500">Neópolis, Natal/RN — CEP 59080-560</span>
+          </div>
+          <div style="border-top:1px solid #dfe6f1;padding:20px 0;display:flex;justify-content:space-between;gap:20px">
+            <span style="font-size:11.5px;font-weight:700;color:#8a99ae;letter-spacing:0.1em">HORÁRIO</span>
+            <span style="font-size:15px;color:#10243d;text-align:right;font-weight:500">Todos os dias, das 6h às 22h</span>
+          </div>
+          <div style="border-top:1px solid #dfe6f1;border-bottom:1px solid #dfe6f1;padding:20px 0;display:flex;justify-content:space-between;gap:20px">
+            <span style="font-size:11.5px;font-weight:700;color:#8a99ae;letter-spacing:0.1em">CONTATO</span>
+            <span style="font-size:15px;color:#10243d;text-align:right;font-weight:500">(84) 99180-1090</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+            <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:15px 26px;background:#00A972;color:#ffffff;font-weight:700;border-radius:30px;text-decoration:none;font-size:15px">Chamar no WhatsApp</a>
+            <a href="{{ directionsUrl }}" target="_blank" rel="noopener" style="padding:15px 26px;background:#004399;color:#ffffff;font-weight:700;border-radius:30px;text-decoration:none;font-size:15px">Traçar rota</a>
+          </div>
+        </div>
+        <!-- TODO: confirmar o pino exato do mapa com o cliente -->
+        <iframe title="Mapa — Posto Neópolis" src="{{ mapSrc }}" width="100%" height="420" style="border:0;border-radius:14px;box-shadow:0 10px 26px rgba(0,45,110,0.08)" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" data-screen-label="faq" style="background:#ffffff;padding:90px 20px">
+    <div style="max-width:900px;margin:0 auto">
+      <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#00A972;margin-bottom:16px">07 — DÚVIDAS FREQUENTES</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 40px">Perguntas que mais recebemos</h2>
+      <div>
+        <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="5">
+          <div style="border-top:1px solid #e2e9f4">
+            <button onclick="{{ item.toggle }}" style="width:100%;text-align:left;padding:24px 0;background:transparent;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#10243d">
+              <span style="font-size:18px;font-weight:600">{{ item.q }}</span>
+              <span style="font-size:22px;font-weight:700;color:#00A972;flex-shrink:0">{{ item.symbol }}</span>
+            </button>
+            <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:0 0 26px;font-size:16px;line-height:1.75;color:#40506b;max-width:680px">{{ item.a }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid #e2e9f4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PARCERIAS ============ -->
+  <section id="parcerias" data-screen-label="parcerias" style="background:#004399;padding:90px 20px">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:60px;align-items:start">
+      <div>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:16px">08 — PARCERIAS</div>
+        <h2 style="font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-0.01em;color:#ffffff;margin:0 0 22px">Parcerias com o Posto Neópolis</h2>
+        <p style="font-size:16.5px;line-height:1.75;color:#d6e3f7;margin:0 0 30px">Estamos abertos a parcerias com empresas que buscam contrato de fornecimento de combustível para frotas, fornecedores de produtos e serviços como óleo, filtros, aditivos e graxas, e negócios ou eventos locais do bairro Neópolis interessados em patrocínio ou ações conjuntas.</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="border-top:1px solid #ffffff33;padding-top:14px;font-size:15px;color:#d6e3f7">Fornecimento de combustível para frotas (B2B)</div>
+          <div style="border-top:1px solid #ffffff33;padding-top:14px;font-size:15px;color:#d6e3f7">Fornecedores de óleo, filtros, aditivos e graxas</div>
+          <div style="border-top:1px solid #ffffff33;padding-top:14px;font-size:15px;color:#d6e3f7">Patrocínio e ações locais no bairro Neópolis</div>
+        </div>
+      </div>
+      <div>
+        <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#ffffff;border-radius:14px;padding:38px">
+            <h3 style="font-size:24px;font-weight:700;color:#00A972;margin:0 0 12px">Proposta enviada</h3>
+            <p style="color:#40506b;font-size:15px;line-height:1.7;margin:0 0 26px">Recebemos seus dados. Nossa equipe vai analisar e entrar em contato pelo canal informado.</p>
+            <button onclick="{{ resetForm }}" style="background:#ffffff;border:1px solid #cfdbec;color:#004399;padding:13px 24px;border-radius:30px;font-weight:700;cursor:pointer;font-size:14px">Enviar outra proposta</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <!-- Formulário apenas front-end: valida e loga no console. TODO: integrar envio real depois. -->
+          <form onsubmit="{{ handleSubmit }}" style="background:#ffffff;border-radius:14px;padding:34px;display:flex;flex-direction:column;gap:20px">
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">NOME*
+              <input type="text" value="{{ formData.name }}" onchange="{{ onNameChange }}" required style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">EMPRESA (OPCIONAL)
+              <input type="text" value="{{ formData.company }}" onchange="{{ onCompanyChange }}" style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+            </label>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px">
+              <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">E-MAIL*
+                <input type="email" value="{{ formData.email }}" onchange="{{ onEmailChange }}" required style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">TELEFONE/WHATSAPP*
+                <input type="tel" value="{{ formData.phone }}" onchange="{{ onPhoneChange }}" required style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+              </label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">TIPO DE PARCERIA*
+              <select value="{{ formData.type }}" onchange="{{ onTypeChange }}" required style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;border-radius:8px">
+                <option value="">Selecione...</option>
+                <sc-for list="{{ partnershipTypes }}" as="opt" hint-placeholder-count="4">
+                  <option value="{{ opt }}">{{ opt }}</option>
+                </sc-for>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:0.1em;color:#8a99ae">MENSAGEM*
+              <textarea value="{{ formData.message }}" onchange="{{ onMessageChange }}" required rows="4" style="padding:13px;background:#f7f9fc;border:1px solid #dbe4f1;color:#10243d;font-size:15px;resize:vertical;border-radius:8px"></textarea>
+            </label>
+            <sc-if value="{{ formError }}" hint-placeholder-val="{{ false }}">
+              <p style="color:#c0392b;font-size:14px;margin:0">{{ formError }}</p>
+            </sc-if>
+            <button type="submit" style="background:#00A972;color:#ffffff;border:none;padding:16px 26px;border-radius:30px;font-weight:700;cursor:pointer;font-size:15px">Enviar proposta de parceria</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#002a63;border-top:4px solid #00A972;padding:70px 20px 30px" data-screen-label="footer">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-bottom:44px">
+      <div>
+        <img src="uploads/3.png" alt="Posto Neópolis NPL" style="height:52px;width:auto;display:block;margin-bottom:14px">
+        <div style="font-weight:700;font-size:14px;letter-spacing:0.06em;color:#ffffff">POSTO NEÓPOLIS</div>
+        <p style="font-size:14px;color:#a9c0e0;margin:10px 0 0;line-height:1.6">Unidade única no bairro Neópolis, Natal/RN.</p>
+      </div>
+      <div>
+        <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">NAVEGAÇÃO</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="#historia" style="color:#d6e3f7;font-size:14px;text-decoration:none">Nossa História</a>
+          <a href="#estrutura" style="color:#d6e3f7;font-size:14px;text-decoration:none">Estrutura</a>
+          <a href="#app" style="color:#d6e3f7;font-size:14px;text-decoration:none">Club Vip NPL</a>
+          <a href="#pagamento" style="color:#d6e3f7;font-size:14px;text-decoration:none">Formas de pagamento</a>
+          <a href="#faq" style="color:#d6e3f7;font-size:14px;text-decoration:none">Dúvidas frequentes</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">CONTATO</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <span style="color:#d6e3f7;font-size:14px">Alameda das Acácias, 1038</span>
+          <span style="color:#d6e3f7;font-size:14px">Neópolis, Natal/RN</span>
+          <a href="tel:+5584991801090" style="color:#d6e3f7;font-size:14px;text-decoration:none">(84) 99180-1090</a>
+          <span style="color:#d6e3f7;font-size:14px">Todos os dias, 6h às 22h</span>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:11.5px;font-weight:700;color:#7dd8b4;margin:0 0 16px;letter-spacing:0.12em">REDES</h4>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="https://www.instagram.com/nplpostoneopolis/" target="_blank" rel="noopener" style="color:#7dd8b4;font-size:14px;text-decoration:none">@nplpostoneopolis</a>
+          <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="color:#7dd8b4;font-size:14px;text-decoration:none">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1240px;margin:0 auto;border-top:1px solid #ffffff26;padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span style="font-size:11.5px;font-weight:500;letter-spacing:0.06em;color:#a9c0e0">© {{ year }} POSTO NEÓPOLIS</span>
+      <span style="font-size:11.5px;font-weight:500;letter-spacing:0.06em;color:#a9c0e0">NEÓPOLIS · NATAL/RN</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onclick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:100;background:rgba(0,26,60,0.92);display:flex;align-items:center;justify-content:center;padding:30px;cursor:zoom-out">
+      <div role="img" aria-label="Posto Neópolis" style="width:92vw;height:88vh;background-image:{{ lightboxBg }};background-size:contain;background-position:center;background-repeat:no-repeat;border-radius:10px"></div>
+      <span style="position:absolute;top:24px;right:30px;font-size:13px;font-weight:600;letter-spacing:0.08em;color:#ffffff">FECHAR ✕</span>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;heroPhoto&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;foto1&quot;, &quot;options&quot;: [&quot;foto1&quot;, &quot;foto2&quot;, &quot;foto3&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Hero&quot;},
+  &quot;mapQuery&quot;: {&quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Alameda das Acácias, 1038, Neópolis, Natal - RN&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Localização&quot;}
+}">
+class Component extends DCLogic {
+  state = {
+    faqOpen: null,
+    liters: 30,
+    fuel: 'comum',
+    scrollPct: 0,
+    lightbox: null,
+    formData: { name: '', company: '', email: '', phone: '', type: '', message: '' },
+    formSubmitted: false,
+    formError: ''
+  };
+
+  photos = [
+    { src: 'uploads/WhatsApp Image 2025-09-19 at 19.24.26 (2).jpeg', alt: 'Pista e cobertura do Posto Neópolis' },
+    { src: 'uploads/WhatsApp Image 2025-09-19 at 19.24.24.jpeg', alt: 'Vista lateral do Posto Neópolis' },
+    { src: 'uploads/WhatsApp Image 2025-09-19 at 19.24.26.jpeg', alt: 'Bombas do Posto Neópolis' },
+    { src: 'uploads/WhatsApp Image 2025-09-19 at 19.24.24 (1).jpeg', alt: 'Fachada do Posto Neópolis à noite' }
+  ];
+
+  faqData = [
+    { q: 'Quais formas de pagamento vocês aceitam?', a: 'Aceitamos dinheiro, PIX, cartão de débito, cartão de crédito e vale-combustível/cartão frota. A lista completa está na seção Formas de Pagamento.' },
+    { q: 'O posto faz troca de óleo?', a: 'Sim, oferecemos serviço de troca de óleo com produtos de qualidade.' },
+    { q: 'Vocês vendem produtos além do combustível?', a: 'Sim: óleo lubrificante, filtros, aditivos, graxas e outros produtos agregados.' },
+    { q: 'Como funciona o programa de fidelidade Club Vip NPL?', a: 'Você acumula pontos a cada litro abastecido — 1 ponto por litro na gasolina comum e 2 pontos por litro na aditivada — e troca esses pontos por prêmios e descontos. Periodicamente o posto libera promoções como sorteios, pontuação em dobro ou triplo, desconto por litro, desconto fixo e roleta de prêmios. No seu aniversário, você ganha um desconto especial.' },
+    { q: 'Qual o horário de funcionamento?', a: 'Funcionamos todos os dias, das 6h às 22h.' }
+  ];
+
+  appFeaturesData = [
+    { num: '01', title: 'Pontos em cada abastecimento', desc: 'Gasolina comum: 1 ponto por litro. Gasolina aditivada: 2 pontos por litro.' },
+    { num: '02', title: 'Resgate de prêmios', desc: 'Troque seus pontos por prêmios e descontos ao atingir a pontuação necessária.' },
+    { num: '03', title: 'Promoções programadas', desc: 'Sorteios, pontuação em dobro ou triplo, desconto por litro, desconto fixo e roleta de prêmios — liberados periodicamente pelo posto.' },
+    { num: '04', title: 'Campanha de aniversário', desc: 'No dia do seu aniversário você ganha um desconto especial.' }
+  ];
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const pct = max > 0 ? Math.min(100, Math.round((h.scrollTop / max) * 100)) : 0;
+      if (pct !== this.state.scrollPct) this.setState({ scrollPct: pct });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.clock = setInterval(() => this.forceUpdate(), 60000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    clearInterval(this.clock);
+  }
+
+  toggleFaq(i) { this.setState(s => ({ faqOpen: s.faqOpen === i ? null : i })); }
+  updateField(field, value) { this.setState(s => ({ formData: { ...s.formData, [field]: value } })); }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const d = this.state.formData;
+    if (!d.name || !d.email || !d.phone || !d.type || !d.message) {
+      this.setState({ formError: 'Preencha todos os campos obrigatórios.' });
+      return;
+    }
+    console.log('Proposta de parceria recebida:', d);
+    this.setState({ formSubmitted: true, formError: '' });
+  }
+
+  resetForm() {
+    this.setState({ formSubmitted: false, formData: { name: '', company: '', email: '', phone: '', type: '', message: '' } });
+  }
+
+  renderVals() {
+    const heroPhotoMap = {
+      foto1: 'uploads/WhatsApp Image 2025-09-19 at 19.24.26.jpeg',
+      foto2: 'uploads/WhatsApp Image 2025-09-19 at 19.24.24.jpeg',
+      foto3: 'uploads/WhatsApp Image 2025-09-19 at 19.24.24 (1).jpeg'
+    };
+    const heroPhoto = heroPhotoMap[this.props.heroPhoto ?? 'foto1'] || heroPhotoMap.foto1;
+
+    const hour = new Date().getHours();
+    const isOpen = hour >= 6 && hour < 22;
+
+    const perLiter = this.state.fuel === 'aditivada' ? 2 : 1;
+    const pointsPerFill = this.state.liters * perLiter;
+
+    const address = 'Alameda das Acácias, 1038, Neópolis, Natal - RN';
+    const mapQuery = this.props.mapQuery ?? address;
+
+    const faqItems = this.faqData.map((item, i) => ({
+      q: item.q,
+      a: item.a,
+      isOpen: this.state.faqOpen === i,
+      symbol: this.state.faqOpen === i ? '−' : '+',
+      toggle: () => this.toggleFaq(i)
+    }));
+
+    const activeBtn = { bg: '#00A972', color: '#ffffff' };
+    const idleBtn = { bg: '#ffffff', color: '#40506b' };
+    const comum = this.state.fuel === 'comum' ? activeBtn : idleBtn;
+    const aditivada = this.state.fuel === 'aditivada' ? activeBtn : idleBtn;
+
+    return {
+      heroBgImage: `url('${heroPhoto}')`,
+      scrollProgress: `${this.state.scrollPct}%`,
+      statusText: isOpen ? 'Aberto agora · até 22h' : 'Fechado · abre às 6h',
+      statusColor: isOpen ? '#00E39A' : '#ffb3a7',
+      valoresList: [
+        { num: '01', label: 'Qualidade' },
+        { num: '02', label: 'Confiança' },
+        { num: '03', label: 'Respeito ao cliente' },
+        { num: '04', label: 'Comprometimento com a comunidade' },
+        { num: '05', label: 'Transparência' }
+      ],
+      appFeatures: this.appFeaturesData,
+      faqItems,
+      openPhoto0: () => this.setState({ lightbox: 0 }),
+      openPhoto1: () => this.setState({ lightbox: 1 }),
+      openPhoto2: () => this.setState({ lightbox: 2 }),
+      openPhoto3: () => this.setState({ lightbox: 3 }),
+      liters: this.state.liters,
+      pointsPerFill,
+      pointsPerMonth: pointsPerFill * 4,
+      comumBg: comum.bg,
+      comumColor: comum.color,
+      aditivadaBg: aditivada.bg,
+      aditivadaColor: aditivada.color,
+      setComum: () => this.setState({ fuel: 'comum' }),
+      setAditivada: () => this.setState({ fuel: 'aditivada' }),
+      onLitersChange: (e) => this.setState({ liters: Number(e.target.value) }),
+      lightboxOpen: this.state.lightbox !== null,
+      lightboxBg: this.state.lightbox !== null ? `url('${this.photos[this.state.lightbox].src}')` : 'none',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      partnershipTypes: [
+        'Fornecimento de combustível (B2B)',
+        'Fornecedor de produtos/serviços',
+        'Patrocínio/ação local',
+        'Outro'
+      ],
+      mapSrc: `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}&output=embed`,
+      directionsUrl: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`,
+      formData: this.state.formData,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      formError: this.state.formError,
+      onNameChange: (e) => this.updateField('name', e.target.value),
+      onCompanyChange: (e) => this.updateField('company', e.target.value),
+      onEmailChange: (e) => this.updateField('email', e.target.value),
+      onPhoneChange: (e) => this.updateField('phone', e.target.value),
+      onTypeChange: (e) => this.updateField('type', e.target.value),
+      onMessageChange: (e) => this.updateField('message', e.target.value),
+      handleSubmit: (e) => this.handleSubmit(e),
+      resetForm: () => this.resetForm(),
+      year: new Date().getFullYear()
+    };
+  }
+}
+
+</script>
+</body>
+</html>

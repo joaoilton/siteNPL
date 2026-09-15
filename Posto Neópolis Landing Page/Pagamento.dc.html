@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="pagamento" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="page-hero" style="background:linear-gradient(120deg,#004399 0%,#002a63 100%);padding:70px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:14px">PRATICIDADE</div>
+    <h1 style="font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;color:#ffffff;margin:0;max-width:760px">Formas de pagamento</h1>
+  </div>
+</section>
+
+<!-- TODO: CONTEÚDO GENÉRICO — confirmar formas de pagamento e bandeiras aceitas com o cliente -->
+<section data-screen-label="pagamento" style="background:#ffffff;padding:80px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <h2 style="font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-0.01em;color:#004399;margin:0 0 40px;max-width:560px">Pague do jeito que for melhor para você</h2>
+    <div data-fx="reveal" style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px">
+      <div style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px">
+        <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 10px">Dinheiro</h3>
+        <p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Pagamento em espécie no caixa.</p>
+      </div><div style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px">
+        <h3 style="font-size:17.5px;font-weight:700;color:#00A972;margin:0 0 10px">PIX</h3>
+        <p style="font-size:14.5px;color:#5b6b83;margin:0;line-height:1.6">Chave disponível no caixa, na hora do pagamento.</p>
+      </div>
+      <div style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;grid-column:1 / -1">
+        <h3 style="font-size:17.5px;font-weight:700;color:#004399;margin:0 0 16px">Débito e crédito</h3>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+          <img src="cards/visa.png" alt="Visa" style="height:26px;width:auto;object-fit:contain;display:block">
+          <img src="cards/mastercard.png" alt="Mastercard" style="height:32px;width:auto;object-fit:contain;display:block">
+          <img src="cards/elo.png" alt="Elo" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/amex.png" alt="American Express" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/diners-club.png" alt="Diners Club" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/jcb.png" alt="JCB" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/cabal.png" alt="Cabal" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/sorocred.png" alt="Sorocred" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/agiplan.png" alt="Agiplan" style="height:22px;width:auto;object-fit:contain;display:block">
+          <img src="cards/cartao-parceiro-b.png" alt="Cartão parceiro" style="height:34px;width:auto;object-fit:contain;display:block">
+        </div>
+      </div>
+      <div style="background:#f3f6fb;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%);padding:30px 26px;grid-column:1 / -1">
+        <h3 style="font-size:17.5px;font-weight:700;color:#00A972;margin:0 0 16px">Vale-combustível e frota</h3>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+          <img src="cards/ticket-log.png" alt="Ticket Log Edenred" style="height:30px;width:auto;object-fit:contain;display:block">
+          <img src="cards/alelo.png" alt="Alelo" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/vr.png" alt="VR" style="height:34px;width:auto;object-fit:contain;display:block">
+          <img src="cards/good-card.png" alt="Good Card" style="height:32px;width:auto;object-fit:contain;display:block">
+          <img src="cards/sem-parar-ctf.png" alt="Sem Parar Empresas / CTF" style="height:28px;width:auto;object-fit:contain;display:block">
+          <img src="cards/vale-card.png" alt="Vale Card" style="height:32px;width:auto;object-fit:contain;display:block">
+          <img src="cards/fitcard.png" alt="FitCard" style="height:22px;width:auto;object-fit:contain;display:block">
+          <img src="cards/combustivel-parceiro.png" alt="Cartão combustível parceiro" style="height:34px;width:auto;object-fit:contain;display:block">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:44px;background:#004399;border-radius:16px;padding:38px 32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center">
+      <div>
+        <h3 style="font-size:22px;font-weight:800;color:#ffffff;margin:0 0 8px">Ficou com dúvida sobre alguma forma de pagamento?</h3>
+        <p style="font-size:15px;color:#d6e3f7;margin:0">Fale com a gente pelo WhatsApp antes de vir ao posto.</p>
+      </div>
+      <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="padding:15px 28px;background:#00A972;color:#ffffff;font-weight:700;border-radius:30px;text-decoration:none;font-size:15px;white-space:nowrap">Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+</body>
+</html>

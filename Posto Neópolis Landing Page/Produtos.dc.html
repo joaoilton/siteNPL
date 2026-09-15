@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="icon" href="uploads/1.png">
+  <meta property="og:title" content="NPL Posto Neópolis">
+  <meta property="og:description" content="Combustível de qualidade, troca de óleo e o Club Vip NPL. Alameda das Acácias, 1038 — Neópolis, Natal/RN.">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <script src="./npl-fx.js"></script>
+  <style>
+    html { scroll-behavior: smooth; overflow-x: clip; }
+    body { margin: 0; background: #ffffff; font-family: 'Inter', sans-serif; color: #10243d; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-family: 'Montserrat', sans-serif; }
+    a { color: #004399; }
+    a:hover { color: #00A972; }
+    input, button { font-family: 'Montserrat', sans-serif; }
+    @keyframes brands-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+</helmet>
+
+<dc-import name="SiteHeader" current="produtos" hint-size="100%,140px"></dc-import>
+
+<section data-screen-label="page-hero" style="background:linear-gradient(120deg,#004399 0%,#002a63 100%);padding:70px 20px">
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="font-size:12.5px;font-weight:700;letter-spacing:0.14em;color:#7dd8b4;margin-bottom:14px">CATÁLOGO</div>
+    <h1 style="font-weight:800;font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-0.02em;color:#ffffff;margin:0 0 18px;max-width:820px">Consulte nossos produtos</h1>
+    <p style="font-size:17px;line-height:1.6;color:#d6e3f7;margin:0;max-width:600px">Busque pelo nome ou navegue pelas categorias para ver o que temos disponível na loja. Para valores e reservas, fale com a nossa equipe.</p>
+  </div>
+</section>
+
+<section data-screen-label="marcas" style="background:#ffffff;border-bottom:1px solid #e2e9f4;padding:40px 0 44px">
+  <div data-fx="marquee" style="overflow:hidden">
+    <div data-fx-track style="display:flex;width:max-content;animation:brands-ticker 46s linear infinite;align-items:center">
+      <div style="display:flex;gap:56px;padding-right:56px;align-items:center;flex:0 0 auto">
+        <img src="brands/lubrax.png" alt="Lubrax" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/petronas.png" alt="Petronas" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/mobil.png" alt="Mobil" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/vr-lub.png" alt="VR Lub" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/acdelco.png" alt="ACDelco" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/bardahl.png" alt="Bardahl" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/stp.png" alt="STP" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/orbi-quimica.png" alt="Orbi Química" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/uni.png" alt="Uni" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/maxon-oil.png" alt="Maxon Oil" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/radnaq.png" alt="Radnaq Automotive" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/tecfil.png" alt="Tecfil" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/wega.png" alt="Wega" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/mann-filter.png" alt="Mann-Filter" style="height:46px;width:132px;object-fit:contain;display:block">
+      </div>
+      <div style="display:flex;gap:56px;padding-right:56px;align-items:center;flex:0 0 auto">
+        <img src="brands/lubrax.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/petronas.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/mobil.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/vr-lub.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/acdelco.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/bardahl.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/stp.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/orbi-quimica.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/uni.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/maxon-oil.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/radnaq.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/tecfil.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/wega.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+        <img src="brands/mann-filter.png" alt="" style="height:46px;width:132px;object-fit:contain;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="busca" style="background:#f3f6fb;padding:34px 20px;border-bottom:1px solid #e2e9f4">
+  <div style="max-width:1240px;margin:0 auto;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+    <input type="search" value="{{ query }}" oninput="{{ onSearch }}" placeholder="Buscar produto (ex: FILTRO WO133, LUBRAX, PALHETA 20)" style="flex:1;min-width:260px;padding:15px 18px;border:1px solid #dbe4f1;border-radius:30px;font-size:15px;background:#ffffff;color:#10243d">
+    <div onclick="{{ onChipClick }}" style="display:flex;gap:8px;flex-wrap:wrap">
+      <button data-cat="" style="padding:11px 18px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer">Todas as categorias</button>
+      <button data-cat="lubrificantes" style="padding:11px 18px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer">Lubrificantes</button>
+      <button data-cat="filtro-oleo" style="padding:11px 18px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer">Filtro de Óleo</button>
+      <button data-cat="filtro-ar" style="padding:11px 18px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer">Filtro de Ar</button>
+      <button data-cat="aditivos" style="padding:11px 18px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:600;cursor:pointer">Aditivos e Fluidos</button>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showCategories }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="categorias" style="position:relative;background:#ffffff;padding:70px 20px;overflow:hidden">
+    <div data-fx="ghost" data-fx-factor="0.12" aria-hidden="true" style="position:absolute;left:-7%;top:6%;font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(160px,30vw,440px);line-height:1;letter-spacing:-0.03em;color:#004399;opacity:0.05;white-space:nowrap;pointer-events:none;user-select:none">PRODUTOS</div>
+    <div style="position:relative;max-width:1240px;margin:0 auto">
+      <h2 style="font-weight:800;font-size:clamp(26px,3.2vw,38px);line-height:1.1;color:#004399;margin:0 0 10px">Categorias</h2>
+      <p style="font-size:15.5px;color:#5b6b83;margin:0 0 40px;max-width:640px">11 categorias, 285 itens cadastrados. Clique em uma categoria para ver a lista completa e a disponibilidade de cada produto.</p>
+      <!-- Espaços de foto: arraste uma imagem sobre cada quadro para ilustrar a categoria -->
+      <div onclick="{{ onCategoryClick }}" data-fx="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px">
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-lubrificantes" shape="rect" placeholder="Foto: Lubrificantes"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Lubrificantes</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">58 produtos</p>
+            <button data-cat="lubrificantes" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-filtro-ar" shape="rect" placeholder="Foto: Filtro de Ar"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Filtro de Ar</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">67 produtos</p>
+            <button data-cat="filtro-ar" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-filtro-oleo" shape="rect" placeholder="Foto: Filtro de Óleo"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Filtro de Óleo</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">47 produtos</p>
+            <button data-cat="filtro-oleo" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-filtro-cabine" shape="rect" placeholder="Foto: Filtro de Cabine"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Filtro de Cabine</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">34 produtos</p>
+            <button data-cat="filtro-cabine" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-filtro-combustivel" shape="rect" placeholder="Foto: Filtro de Combustível"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Filtro de Combustível</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">12 produtos</p>
+            <button data-cat="filtro-combustivel" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-aditivos" shape="rect" placeholder="Foto: Aditivos e Fluidos"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Aditivos e Fluidos</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">27 produtos</p>
+            <button data-cat="aditivos" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-palhetas" shape="rect" placeholder="Foto: Palhetas"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Palhetas</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">22 produtos</p>
+            <button data-cat="palhetas" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-pecas" shape="rect" placeholder="Foto: Peças e Acessórios"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Peças e Acessórios</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">13 produtos</p>
+            <button data-cat="pecas-acessorios" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-graxas" shape="rect" placeholder="Foto: Graxas"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Graxas</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">2 produtos</p>
+            <button data-cat="graxas" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-aromatizantes" shape="rect" placeholder="Foto: Aromatizantes"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Aromatizantes</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">2 produtos</p>
+            <button data-cat="aromatizantes" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+        <div style="border:1px solid #e2e9f4;overflow:hidden;background:#ffffff;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,0 100%)">
+          <div style="height:150px;background:#f3f6fb;filter:saturate(0.95) contrast(1.06)"><image-slot id="cat-ceras" shape="rect" placeholder="Foto: Ceras"></image-slot></div>
+          <div style="padding:22px 20px">
+            <h3 style="font-size:17px;font-weight:700;color:#004399;margin:0 0 4px">Ceras</h3>
+            <p style="font-size:13px;color:#8a99ae;margin:0 0 16px">1 produto</p>
+            <button data-cat="ceras" style="width:100%;padding:11px;border:1px solid #dbe4f1;background:#f3f6fb;color:#004399;border-radius:30px;font-size:13.5px;font-weight:700;cursor:pointer">Ver produtos</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ showList }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="lista" style="background:#ffffff;padding:60px 20px 80px">
+    <div style="max-width:1240px;margin:0 auto">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;margin-bottom:8px">
+        <h2 style="font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.1;color:#004399;margin:0">{{ listTitle }}</h2>
+        <button onclick="{{ clearFilters }}" style="padding:11px 20px;border:1px solid #dbe4f1;background:#ffffff;color:#004399;border-radius:30px;font-size:13px;font-weight:700;cursor:pointer">Voltar às categorias</button>
+      </div>
+      <p style="font-size:14.5px;color:#8a99ae;margin:0 0 26px">{{ resultCount }}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px">
+        <sc-for list="{{ results }}" as="item" hint-placeholder-count="8">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;border:1px solid #e2e9f4;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);padding:16px 18px">
+            <div>
+              <div style="font-size:14.5px;font-weight:600;color:#10243d;line-height:1.4">{{ item.name }}</div>
+              <div style="font-size:12px;color:#8a99ae;margin-top:4px">{{ item.cat }}</div>
+            </div>
+            <span style="font-size:11.5px;font-weight:700;letter-spacing:0.04em;padding:6px 14px;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);white-space:nowrap;color:{{ item.statusColor }};background:{{ item.statusBg }}">{{ item.status }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid #e2e9f4;border-radius:14px;padding:40px;text-align:center">
+          <h3 style="font-size:19px;font-weight:700;color:#004399;margin:0 0 8px">Nenhum produto encontrado</h3>
+          <p style="font-size:15px;color:#5b6b83;margin:0 0 22px">Tente outro termo de busca ou fale com a nossa equipe para consultar disponibilidade.</p>
+          <a href="https://wa.me/5584991801090" target="_blank" rel="noopener" style="display:inline-block;padding:14px 26px;background:#00A972;color:#ffffff;font-weight:700;border-radius:30px;text-decoration:none;font-size:14.5px">Perguntar no WhatsApp</a>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+</sc-if>
+
+<section style="background:#f3f6fb;padding:50px 20px">
+  <div style="max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center">
+    <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:center">
+      <span style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5b6b83"><span style="width:10px;height:10px;border-radius:50%;background:#00A972;display:inline-block"></span>Disponível na loja</span>
+      <span style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5b6b83"><span style="width:10px;height:10px;border-radius:50%;background:#b6c2d3;display:inline-block"></span>Sob consulta</span>
+    </div>
+    <p style="font-size:13px;color:#8a99ae;margin:0;max-width:560px">Disponibilidade conforme a última atualização do estoque da loja. Para confirmar antes de vir, chame a gente no WhatsApp.</p>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { query: '', cat: '', cats: null };
+
+  componentDidMount() {
+    import('./products.js')
+      .then(m => this.setState({ cats: m.CATEGORIES }))
+      .catch(err => console.error('Falha ao carregar o catálogo:', err));
+  }
+
+  pickCat(e) {
+    const btn = e.target.closest('[data-cat]');
+    if (!btn) return;
+    this.setState({ cat: btn.dataset.cat });
+  }
+
+  renderVals() {
+    const cats = this.state.cats || [];
+    const q = this.state.query.trim().toLowerCase();
+    const cat = this.state.cat;
+    const filtering = !!(q || cat);
+
+    let results = [];
+    if (filtering && cats.length) {
+      const pool = cat ? cats.filter(c => c.slug === cat) : cats;
+      pool.forEach(c => c.items.forEach(i => {
+        if (!q || i.n.toLowerCase().includes(q)) {
+          results.push({
+            name: i.n,
+            cat: c.label,
+            status: i.a ? 'Disponível' : 'Sob consulta',
+            statusColor: i.a ? '#00734f' : '#5b6b83',
+            statusBg: i.a ? '#dcf5eb' : '#eef2f8'
+          });
+        }
+      }));
+    }
+
+    const catLabel = cat ? (cats.find(c => c.slug === cat) || {}).label : null;
+    const listTitle = catLabel || (q ? `Resultados para “${this.state.query.trim()}”` : 'Produtos');
+    const loading = filtering && !this.state.cats;
+
+    return {
+      query: this.state.query,
+      onSearch: (e) => this.setState({ query: e.target.value }),
+      onChipClick: (e) => this.pickCat(e),
+      onCategoryClick: (e) => this.pickCat(e),
+      clearFilters: () => this.setState({ query: '', cat: '' }),
+      showCategories: !filtering,
+      showList: filtering,
+      results,
+      listTitle,
+      resultCount: loading ? 'Carregando catálogo...' : `${results.length} ${results.length === 1 ? 'produto encontrado' : 'produtos encontrados'}`,
+      noResults: filtering && !loading && results.length === 0
+    };
+  }
+}
+
+</script>
+</body>
+</html>

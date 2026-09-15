@@ -1,0 +1,42 @@
+// Prêmios do Club Vip NPL — extraídos do painel do aplicativo (20/08/2026).
+// Nomes e pontuações mantidos exatamente como cadastrados no app.
+// Categoria "Budega Paulista" = conveniência parceira do posto.
+// slot = id do espaço de foto (a imagem enviada fica salva por esse id).
+window.NPL_REWARDS = [
+ { n: 'Chaveiro Posto Neópolis', c: 'Brinde', p: 30, slot: 'rw-chaveiro' },
+ { n: 'Cubo Mágico', c: 'Brinde', p: 70, slot: 'rw-cubo' },
+ { n: 'Bolhinha de sabão', c: 'Brinde', p: 80, slot: 'rw-bolhinha' },
+ { n: 'Freegells', c: 'Brinde', p: 80, slot: 'rw-freegells' },
+ { n: '10 centavos por litro', c: 'Desconto no litro', p: 90, slot: 'rw-litro-10' },
+ { n: 'Halls', c: 'Budega Paulista', p: 100, slot: 'rw-halls' },
+ { n: 'Chiclete Trident', c: 'Budega Paulista', p: 110, slot: 'rw-trident', img: 'prizes/chiclete-trident.png' },
+ { n: 'Flanela', c: 'Itens Automotivos', p: 120, slot: 'rw-flanela', img: 'prizes/flanela.png' },
+ { n: 'Água 500 ml', c: 'Budega Paulista', p: 130, slot: 'rw-agua' },
+ { n: 'KAPO', c: 'Budega Paulista', p: 130, slot: 'rw-kapo' },
+ { n: 'Kit para queijo', c: 'Brinde', p: 140, slot: 'rw-kit-queijo' },
+ { n: 'Carrinho de brinquedo', c: 'Brinde', p: 160, slot: 'rw-carrinho' },
+ { n: 'Refrigerante Lata', c: 'Budega Paulista', p: 160, slot: 'rw-refrigerante' },
+ { n: '20 centavos por litro', c: 'Desconto no litro', p: 190, slot: 'rw-litro-20' },
+ { n: 'Cachorrinho de brinquedo', c: 'Brinde', p: 195, slot: 'rw-cachorrinho' },
+ { n: 'Chocolate Snikers', c: 'Budega Paulista', p: 200, slot: 'rw-snickers' },
+ { n: 'Limpa para-brisa STP', c: 'Itens Automotivos', p: 200, slot: 'rw-limpa-parabrisa' },
+ { n: 'Aromatizante Folha', c: 'Itens Automotivos', p: 260, slot: 'rw-aromatizante' },
+ { n: 'Pão Francês com Requeijão', c: 'Budega Paulista', p: 260, slot: 'rw-pao-requeijao' },
+ { n: 'Kit talheres portátil', c: 'Brinde', p: 280, slot: 'rw-kit-talheres' },
+ { n: '30 centavos por litro', c: 'Desconto no litro', p: 290, slot: 'rw-litro-30' },
+ { n: 'Boneca Sereia', c: 'Brinde', p: 330, slot: 'rw-boneca' },
+ { n: 'Petisqueira', c: 'Brinde', p: 330, slot: 'rw-petisqueira' },
+ { n: 'Queijo Quente da Casa', c: 'Budega Paulista', p: 330, slot: 'rw-queijo-quente' },
+ { n: 'Garrafa de Alumínio', c: 'Brinde', p: 335, slot: 'rw-garrafa' },
+ { n: 'Desconto de R$10,00', c: 'Voucher', p: 335, slot: 'rw-voucher-10' },
+ { n: 'Combo 2 (Salgado SIMPLES + Refrigerante 200ml)', c: 'Budega Paulista', p: 390, slot: 'rw-combo-2' },
+ { n: 'Bola de futebol', c: 'Brinde', p: 420, slot: 'rw-bola' },
+ { n: '30% de desconto em qualquer óleo', c: 'Itens Automotivos', p: 450, slot: 'rw-desconto-oleo' },
+ { n: 'Kit para Churrasco', c: 'Brinde', p: 450, slot: 'rw-kit-churrasco' },
+ { n: 'Combo 3 (Salgado Especial + Refrigerante 200ml)', c: 'Budega Paulista', p: 490, slot: 'rw-combo-3' },
+ { n: 'Combo 1 (Cafés + Bolos)', c: 'Budega Paulista', p: 530, slot: 'rw-combo-1' },
+ { n: 'Sanduiche de Mortadela', c: 'Budega Paulista', p: 590, slot: 'rw-sanduiche' },
+ { n: 'Desconto de R$20,00', c: 'Voucher', p: 665, slot: 'rw-voucher-20' },
+ { n: 'Desconto de R$30,00', c: 'Voucher', p: 1000, slot: 'rw-voucher-30' },
+ { n: 'Desconto de R$100,00 na troca de óleo', c: 'Troca de óleo', p: 3000, slot: 'rw-troca-oleo-100' }
+];
