@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-# Material bruto do editor de design e export antigo (duplicam páginas do site).
-# Não devem aparecer no Google.
-Disallow: /Posto%20Ne%C3%B3polis%20Landing%20Page/
-Disallow: /Nossa%20Historia%20-%20Posto%20Neopolis.html
-
 Sitemap: https://www.postoneopolis.com.br/sitemap.xml
